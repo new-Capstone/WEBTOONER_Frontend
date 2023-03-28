@@ -1,15 +1,29 @@
-//임시로 만든 메인 페이지
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import '../styles/Main.css';
 
 function Main() {
   return (
     <div>
         <Header />
-      <h1>Main 페이지</h1>
-      <Link to="/about">About 페이지로 이동</Link>
+        <div class="main-container">
+          <div class="main-left">
+            <div class="main-left-title">Title</div>
+            <div>
+              본문 설명<br />
+              ...<br />
+              ...<br />
+              ...<br />
+              ...<br />
+              ...<br />
+              <Link to="/use">
+                <button>사용하기</button>
+              </Link>
+            </div>
+          </div>
+          <div class="main-right">사진 들어감</div>
+        </div>
     </div>
   );
 }

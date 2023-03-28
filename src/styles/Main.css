@@ -1,0 +1,31 @@
+.main-left-title {
+    font-weight: bold;
+    font-size:xx-large;
+    padding-bottom: 30px;
+}
+
+.main-left {
+    margin-top: 100px;
+    margin-left:200px;
+}
+
+.main-right{
+    margin-right: 200px;
+    float:right;
+    min-width:500px;
+    height:500px;
+}
+
+.main-left-des{
+    margin-left:200px;
+}
+
+.button{
+    color: white;
+    background: teal;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid teal;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
