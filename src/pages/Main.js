@@ -9,7 +9,8 @@ function Main() {
     <div>
         <Header />
       <h1>Main 페이지</h1>
-      <Link to="/about">About 페이지로 이동</Link>
+      <Link to="/about">About 페이지로 이동</Link><br/>
+      <Link to="/mypage">마이 페이지로 이동</Link>
     </div>
   );
 }
