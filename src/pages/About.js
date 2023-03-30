@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from '../components/Header';
-import '../styles/About.css';
-
+import './About.css';
+import Header from '../components/Header'
 function About() {
   return (
     <div className="about-container">
