@@ -7,11 +7,9 @@ function Main() {
   return (
     <div>
         <Header />
-<<<<<<< HEAD
       <h1>Main 페이지</h1>
       <Link to="/about">About 페이지로 이동</Link><br/>
       <Link to="/mypage">마이 페이지로 이동</Link>
-=======
         <div class="main-container">
           <div class="main-left">
             <div class="main-left-title">Title</div>
@@ -31,7 +29,6 @@ function Main() {
           </div>
           <div class="main-right">사진 들어감</div>
         </div>
->>>>>>> abc74ebe856f28ca5ae32bc94e978c45de31391c
     </div>
   );
 }
