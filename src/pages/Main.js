@@ -10,16 +10,18 @@ function Main() {
         <div class="main-container">
           <div class="main-left">
             <div class="main-left-title">Title</div>
-            <div>
+            <div class="main-left-des">
               본문 설명<br />
               ...<br />
               ...<br />
               ...<br />
               ...<br />
               ...<br />
-              <Link to="/use">
-                <button>사용하기</button>
-              </Link>
+              <div class="button">
+                <Link to="/mypage">
+                  <button>사용하기</button>
+                </Link>
+              </div>
             </div>
           </div>
           <div class="main-right">사진 들어감</div>
