@@ -1,18 +1,45 @@
 import React from 'react';
 import './About.css';
 import Header from '../components/Header'
-
 function About() {
   return (
     <div className="about-container">
-        <Header />
-      <div className="about-right">
-        <div className="about-description">
-          <h3>About</h3>
-          <p>소개글</p>
+      <Header />
+      <div className="about-main">
+        <div className="about-left">
+          <img src="/images/about-img.jpg" alt="about-img" />
+          <p>설명 본문</p>
+          <img src="/images/about-img.jpg" alt="about-img" />
+          <p>설명 본문</p>
+          <img src="/images/about-img.jpg" alt="about-img" />
+          <p>설명 본문</p>
+          <img src="/images/about-img.jpg" alt="about-img" />
+          <p>설명 본문</p>
+          <img src="/images/about-img.jpg" alt="about-img" />
+          <p>설명 본문</p>
+          <img src="/images/about-img.jpg" alt="about-img" />
+          <p>설명 본문</p>
+          <img src="/images/about-img.jpg" alt="about-img" />
+          <p>설명 본문</p>
+          <img src="/images/about-img.jpg" alt="about-img" />
+          <p>설명 본문</p>
+          <img src="/images/about-img.jpg" alt="about-img" />
+          <p>설명 본문</p>
+          <img src="/images/about-img.jpg" alt="about-img" />
+          <p>설명 본문</p>
+          <img src="/images/about-img.jpg" alt="about-img" />
+          <p>설명 본문</p>
         </div>
-        <div className="about-side-image">
-          <img src="https://via.placeholder.com/200x400" alt="side-image" />
+        <div className="about-right">
+          <div className="about-contents" style={{ float: 'right' }}>
+            <ul>
+              <li>전체</li>
+              <li>목차1</li>
+              <li>목차2</li>
+              <li>목차3</li>
+              <li>목차4</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
