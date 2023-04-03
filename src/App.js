@@ -3,7 +3,8 @@
 
 import {Routes, Route } from 'react-router-dom';
 import Main from './pages/Main';
-import About from './pages/About';
+import About from './JinWook/pages/About';
+import Chat from './JinWook/pages/Chat';
 import Mypage from './pages/Mypage';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/" element={<Main />} />
         <Route path="/about" element={<About />} />
         <Route path="/mypage" element={<Mypage />} />
+        <Route path="/chat" element={<Chat />} />
       </Routes>
   );
 }
