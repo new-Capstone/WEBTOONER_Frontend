@@ -5,7 +5,9 @@ import {Routes, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import About from './JinWook/pages/About';
 import Chat from './JinWook/pages/Chat';
-import Mypage from './pages/Mypage';
+import Mypage from './Jieun/pages/Mypage';
+import Edit from './Jieun/pages/Edit';
+import Tutorpage from './Jieun/pages/Tutorpage';
 
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(True);  로그인 여부
@@ -17,6 +19,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="/edit" element={<Edit/>} />
+        <Route path="/tutorpage" element={<Tutorpage/>} />
       </Routes>
   );
 }
