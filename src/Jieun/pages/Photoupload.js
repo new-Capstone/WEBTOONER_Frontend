@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
+
+//팝업창으로 하는 방법 고려
 function PhotoUpload() {
     const [file, setFile] = useState(null);
+    
 
     const handleFileInputChange = (event) => {
         setFile(event.target.files[0]);
@@ -20,9 +24,9 @@ function PhotoUpload() {
             <form onSubmit={handleFileUpload}>
                 <p>파일 가져오기</p>
                 <input type="file" onChange={handleFileInputChange} /> <br/><br/>
-                <Link to="/Edit">
+                {/* <Link to="/Edit"> */}
                 <button type="submit">Upload</button>
-                </Link>
+                {/* </Link> */}
             </form>
         </div>
     );
