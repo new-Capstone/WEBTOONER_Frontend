@@ -16,19 +16,18 @@ function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(True);  로그인 여부
 
   return (
-      // <Routes>
-      //   {/* <Route/>를 이용해 페이지를 추가할 수 있음 */}
-      //   <Route exact path="/" element={<Main />} />
-      //   <Route path="/about" element={<About />} />
-      //   <Route path="/mypage" element={<Mypage />} />
-      //   <Route path="/chat" element={<Chat />} />
-      //   <Route path="/edit" element={<Edit/>} />
-      //   <Route path="/tutorpage" element={<Tutorpage/>} />
-      //   <Route path="/photoupload" element={<PhotoUpload/>} />
-      //   <Route path="/findtutor" element={<FindTutor />}/>
-      // </Routes>
-      <FindTutor />
-    
+      <Routes>
+        {/* <Route/>를 이용해 페이지를 추가할 수 있음 */}
+        <Route exact path="/" element={<Main />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/mypage" element={<Mypage />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/edit" element={<Edit/>} />
+        <Route path="/tutorpage" element={<Tutorpage/>} />
+        <Route path="/photoupload" element={<PhotoUpload/>} />
+        <Route path="/findtutor" element={<FindTutor />}/>
+      </Routes>
+  
   );
 }
 
