@@ -1,0 +1,51 @@
+
+.bnt_item {
+    margin-top: 200px;
+    margin-left:100px;
+    border: none;
+    color: silver;
+    padding: 40px 90px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    margin: 10px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-radius: 10%;
+  }
+
+  .bnt_finish{
+    margin-left: 200px;
+    border: none;
+    color: silver;
+    padding: 40px 90px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    margin: 10px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-radius: 10%;
+  }
+
+
+  .content_first{
+    margin-top:100px;
+    float:left;
+    margin-left:100px;
+
+  }
+
+  .content_second{
+    margin-top:100px;
+    float:left;
+    margin-left:540px;
+  }
+
+  .content_thrid{
+    margin-top:100px;
+    float:right;
+    margin-right:100px;
+  }
