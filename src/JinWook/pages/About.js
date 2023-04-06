@@ -24,6 +24,8 @@ function About() {
           <p>설명 본문</p>
           <img src="/images/about-img.jpg" alt="about-img" />
           <p>설명 본문</p>
+          <img src="/images/about-img.jpg" alt="about-img" />          
+          <p>설명 본문</p>
           <img src="/images/about-img.jpg" alt="about-img" />
           <p>설명 본문</p>
           <img src="/images/about-img.jpg" alt="about-img" />
