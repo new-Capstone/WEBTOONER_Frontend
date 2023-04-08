@@ -6,6 +6,7 @@ import Main from './ga/pages/Main';
 import FindTutor from './ga/pages/FindTutor';
 import About from './JinWook/pages/About';
 import Chat from './JinWook/pages/Chat';
+import AssignTutor from './JinWook/pages/AssignTutor';
 import Mypage from './Jieun/pages/Mypage';
 import Edit from './Jieun/pages/Edit';
 import Tutorpage from './Jieun/pages/Tutorpage';
@@ -26,6 +27,7 @@ function App() {
         <Route path="/tutorpage" element={<Tutorpage/>} />
         <Route path="/photoupload" element={<PhotoUpload/>} />
         <Route path="/findtutor" element={<FindTutor />}/>
+        <Route path="/assigntutor" element={<AssignTutor />}/>
       </Routes>
   
   );
