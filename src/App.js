@@ -4,6 +4,7 @@
 import {Routes, Route } from 'react-router-dom';
 import Main from './ga/pages/Main';
 import FindTutor from './ga/pages/FindTutor';
+import Use from './ga/pages/Use';
 import About from './JinWook/pages/About';
 import Chat from './JinWook/pages/Chat';
 import AssignTutor from './JinWook/pages/AssignTutor';
@@ -28,6 +29,7 @@ function App() {
         <Route path="/photoupload" element={<PhotoUpload/>} />
         <Route path="/findtutor" element={<FindTutor />}/>
         <Route path="/assigntutor" element={<AssignTutor />}/>
+        <Route path="/Use" element={<Use />}/>
       </Routes>
   
   );
