@@ -9,7 +9,7 @@ function Use(){
 
     const handleUpload = (acceptedFiles) => {
         setFiles(acceptedFiles);
-};
+    };
 
     return(
         <div>
@@ -35,7 +35,7 @@ function Use(){
                 <h1>Photo Uploader</h1>
                 <PhotoUploader onUpload={handleUpload} />
                 {files.map((file)=>(
-                    <img key={file.name} src={URL.createObjectURL.apply(file)} alt={file.name} />
+                    <img key={file.name} src={URL.createObjectURL(file)} alt={file.name} />
                 ))}
                 </div>
             </div>
