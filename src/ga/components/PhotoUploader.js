@@ -17,7 +17,7 @@ function PhotoUploader({ onUpload }) {
       {isDragActive ? (
         <p>Drop the files here ...</p>
       ) : (
-        <p>Drag 'n' drop some files here, or click to select files</p>
+        <p>Click to select files</p>
       )}
     </div>
   );
