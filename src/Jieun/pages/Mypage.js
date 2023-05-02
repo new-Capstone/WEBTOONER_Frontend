@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Mypage.css'
 import User from "../components/User";
 
-function Mypage(props) {
+function Mypage() {
 
     //Edit에서 수정한 유저 정보 어떻게 가져와야할까?
     //User.js import?

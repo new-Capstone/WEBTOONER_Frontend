@@ -12,8 +12,8 @@ function Header() {
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
-          <li><Link to = "/mypage">My Page</Link></li>
           <li><Link to = "/chat">Chat</Link></li>
+          <li><Link to = "/Tutorapply">Apply</Link></li>
         </ul>
       </nav>
     </div>
@@ -21,4 +21,6 @@ function Header() {
 }
 
 export default Header;
+
+
 

@@ -5,7 +5,7 @@ import '../styles/Mypage.css'
 
 function Tutorpage() {
     const tutor = {
-        name: "김지은",
+        nickname: "김지은",
         email: "smkje19999@gmail.com",
         intro: "튜터 소개글 입니다."
     };
@@ -17,7 +17,7 @@ function Tutorpage() {
             <div className="mp-left">
                 <img src="https://via.placeholder.com/231x231" alt="side-image" />
                     <ul>
-                        <li>{tutor.name}</li>
+                        <li>{tutor.nickname}</li>
                         <li>{tutor.email}</li>
                     </ul>
                     <p>{tutor.intro}</p>
