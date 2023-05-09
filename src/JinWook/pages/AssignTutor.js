@@ -6,6 +6,7 @@ function AssignTutor() {
   const [introduction, setIntroduction] = useState("");
   const [genres, setGenres] = useState([]);
   const [imageData, setImageData] = useState([]);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleIntroductionChange = (e) => {
     const { value } = e.target;
@@ -23,6 +24,18 @@ function AssignTutor() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO: 회원 등록 처리
+    setShowConfirmation(true);
+    {
+      showConfirmation && (
+        <div className="confirmation-modal">
+          <h2>등록하시겠습니까?</h2>
+          <div className="buttons">
+            <button onClick={() => setShowConfirmation(false)}>아니오</button>
+            <button>예</button>
+          </div>
+        </div>
+      );
+    }
   };
 
   function previewImage(event, index) {
@@ -109,6 +122,20 @@ function AssignTutor() {
         <button className="register-button" onClick={handleSubmit}>
           등록
         </button>
+        {showConfirmation && (
+          <div className="confirmation-modal">
+            <div className="confirmation-modal-content">
+              <h2>등록하시겠습니까?</h2>
+              <div className="buttons">
+                <button onClick={() => setShowConfirmation(false)}>
+                  
+                  아니오
+                </button>
+                <button>예</button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
