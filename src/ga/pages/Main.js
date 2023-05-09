@@ -18,7 +18,7 @@ function Main() {
               ...<br />
               ...<br />
               <div class="button">
-                <Link to="/mypage">
+                <Link to="/use">
                   <button>사용하기</button>
                 </Link>
               </div>

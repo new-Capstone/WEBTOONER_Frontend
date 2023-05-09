@@ -6,7 +6,7 @@ import '../styles/FindTutor.css';
 function FindTutor () {
     return (
         <div>
-            <Header />
+            <Header /> 
             <div className="category_list">
                 <Link to='/tutorpage'>
                     <button className="bnt_item">느와르</button>

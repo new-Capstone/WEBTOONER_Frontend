@@ -4,14 +4,18 @@
 import {Routes, Route } from 'react-router-dom';
 import Main from './ga/pages/Main';
 import FindTutor from './ga/pages/FindTutor';
+import Use from './ga/pages/Use';
 import About from './JinWook/pages/About';
 import Chat from './JinWook/pages/Chat';
+import AssignTutor from './JinWook/pages/AssignTutor';
 import Mypage from './Jieun/pages/Mypage';
 import Edit from './Jieun/pages/Edit';
 import Tutorpage from './Jieun/pages/Tutorpage';
 import PhotoUpload from './Jieun/pages/Photoupload';
 import TutorApply from './Jieun/pages/TutorApply';
 import TutorPortfolio from './Jieun/pages/TutorPortfolio';
+import Porfolupload from './Jieun/pages/Porfolupload';
+
 
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(True);  로그인 여부
@@ -29,6 +33,10 @@ function App() {
         <Route path="/findtutor" element={<FindTutor />}/>
         <Route path="/tutorapply" element={<TutorApply />}/>
         <Route path="/tutorportfolio" element={<TutorPortfolio />}/>
+        <Route path="/assigntutor" element={<AssignTutor />}/>
+        <Route path="/Use" element={<Use />}/>
+        <Route path="/porfolupload" element={<Porfolupload/>}/>
+        
       </Routes>
   
   );

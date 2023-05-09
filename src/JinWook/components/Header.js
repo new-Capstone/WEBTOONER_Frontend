@@ -12,6 +12,7 @@ function Header() {
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
+          <li><Link to="/assigntutor">Assign Tutor</Link></li>
           <li><Link to = "/mypage">My Page</Link></li>
           <li><Link to = "/chat">Chat</Link></li>
         </ul>
