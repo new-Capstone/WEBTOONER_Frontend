@@ -28,7 +28,6 @@ function Mypage() {
         <div className="mp-main">
             <div className="mp-left">
                 <img src="https://via.placeholder.com/231x231" alt="side-image" />
-                    {/* <User user={user} onSubmit={handleSubmit}/> */}
                     <ul>
                         <li>{user.name}</li> 
                         <li>{user.email}</li>

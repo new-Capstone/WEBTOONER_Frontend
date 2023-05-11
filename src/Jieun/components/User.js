@@ -44,7 +44,12 @@ function User(props) {
             </li>
         </ul>
         <label>
-            <input type="text" style={{ width: "220px", height: "100px"}} value={inputIntro} onChange={handleIntroChange} placeholder="자기소개"/>
+            <textarea
+            value={inputIntro}
+            style={{ width: "165px", height: "100px"}}
+            onChange={handleIntroChange}
+            placeholder="자기소개"
+            ></textarea>
         </label>
         <br/><br/>
         {/* <Link to="/mypage"> */}
