@@ -11,10 +11,8 @@ import AssignTutor from './JinWook/pages/AssignTutor';
 import Mypage from './Jieun/pages/Mypage';
 import Edit from './Jieun/pages/Edit';
 import Tutorpage from './Jieun/pages/Tutorpage';
-import PhotoUpload from './Jieun/pages/Photoupload';
 import TutorApply from './Jieun/pages/TutorApply';
 import TutorPortfolio from './Jieun/pages/TutorPortfolio';
-import Porfolupload from './Jieun/pages/Porfolupload';
 
 
 function App() {
@@ -29,14 +27,11 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/edit" element={<Edit/>} />
         <Route path="/tutorpage" element={<Tutorpage/>} />
-        <Route path="/photoupload" element={<PhotoUpload/>} />
         <Route path="/findtutor" element={<FindTutor />}/>
         <Route path="/tutorapply" element={<TutorApply />}/>
         <Route path="/tutorportfolio" element={<TutorPortfolio />}/>
         <Route path="/assigntutor" element={<AssignTutor />}/>
-        <Route path="/Use" element={<Use />}/>
-        <Route path="/porfolupload" element={<Porfolupload/>}/>
-        
+        <Route path="/Use" element={<Use />}/>       
       </Routes>
   
   );
