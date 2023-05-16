@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import "../styles/AssignTutor.css";
+import Modal from 'react-modal';
 
 function AssignTutor() {
   const [introduction, setIntroduction] = useState("");
   const [genres, setGenres] = useState([]);
   const [imageData, setImageData] = useState([]);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleIntroductionChange = (e) => {
     const { value } = e.target;
@@ -23,6 +25,18 @@ function AssignTutor() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO: 회원 등록 처리
+    setShowConfirmation(true);
+    {
+      showConfirmation && (
+        <div className="confirmation-modal">
+          <h2>등록하시겠습니까?</h2>
+          <div className="buttons">
+            <button onClick={() => setShowConfirmation(false)}>아니오</button>
+            <button>예</button>
+          </div>
+        </div>
+      );
+    }
   };
 
   function previewImage(event, index) {
@@ -35,6 +49,20 @@ function AssignTutor() {
     };
     reader.readAsDataURL(event.target.files[0]);
   }
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const ModalStyle = { //modal css
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+        }
+    };
+
   return (
     <div>
       <Header />
@@ -106,10 +134,33 @@ function AssignTutor() {
             ))}
           </div>
         </div>{" "}
-        <button className="register-button" onClick={handleSubmit}>
+        {/* <button className="register-button" onClick={handleSubmit}>
           등록
         </button>
-      </div>
+        {showConfirmation && (
+          <div className="confirmation-modal">
+            <div className="confirmation-modal-content">
+              <h2>등록하시겠습니까?</h2>
+              <div className="buttons">
+                <button onClick={() => setShowConfirmation(false)}>
+                  
+                  아니오
+                </button>
+                <button>예</button> */}
+
+                <button onClick={()=> setModalIsOpen(true)}>등록하기</button>
+                        <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={ModalStyle}>
+      	                    <br/>등록하시겠습니까?<br/><br/>
+                            {/* <Link to="/"> */}
+                                <button>네</button>
+                            {/* </Link> */}
+                            <button onClick={()=> setModalIsOpen(false)}>아니오</button>
+                        </Modal>
+              </div>
+            {/* </div>
+          </div>
+        )}
+      </div> */}
     </div>
   );
 }
