@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from '../components/Header'
 import { Link } from 'react-router-dom';
 import '../styles/Mypage.css'
+import Modal from 'react-modal';
 
 function TutorPortfolio() {
 
@@ -18,13 +19,27 @@ function TutorPortfolio() {
         reader.readAsDataURL(event.target.files[0]);
       }
 
+      const [modalIsOpen, setModalIsOpen] = useState(false);
+
+      const ModalStyle = { //modal css
+          content: {
+              top: '50%',
+              left: '50%',
+              right: 'auto',
+              bottom: 'auto',
+              marginRight: '-50%',
+              transform: 'translate(-50%, -50%)',
+          }
+      };
+  
 
     return (
     
         <div className='mp-container'>
             <Header />
             <div className="mp-left">
-                <h1>포트폴리오 등록하기</h1>
+                <br/>
+                <h1>포트폴리오 등록</h1>
             </div>
             <div className="mp-main">
             {[1,2,3,4].map((index) => (
@@ -55,11 +70,17 @@ function TutorPortfolio() {
             </div>
 
             <div className="mp-right">    
-                <Link to="/TutorPortfolio">
-                <button type="submit">등록완료</button>
-                </Link>
+                <button onClick={()=> setModalIsOpen(true)}>등록하기</button>
+                <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={ModalStyle}>
+                <br/>등록하시겠습니까?<br/><br/>
+                <Link to="/tutorpage">    
+                    <button>네</button>
+                </Link>                
+                <button onClick={()=> setModalIsOpen(false)}>아니오</button>
+                </Modal>
             </ div>
-        </div>
+         </div>
+       
     );
   }
 

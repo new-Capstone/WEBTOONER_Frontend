@@ -133,34 +133,17 @@ function AssignTutor() {
               </div>
             ))}
           </div>
-        </div>{" "}
-        {/* <button className="register-button" onClick={handleSubmit}>
-          등록
-        </button>
-        {showConfirmation && (
-          <div className="confirmation-modal">
-            <div className="confirmation-modal-content">
-              <h2>등록하시겠습니까?</h2>
-              <div className="buttons">
-                <button onClick={() => setShowConfirmation(false)}>
-                  
-                  아니오
-                </button>
-                <button>예</button> */}
-
-                <button onClick={()=> setModalIsOpen(true)}>등록하기</button>
-                        <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={ModalStyle}>
-      	                    <br/>등록하시겠습니까?<br/><br/>
-                            {/* <Link to="/"> */}
-                                <button>네</button>
-                            {/* </Link> */}
-                            <button onClick={()=> setModalIsOpen(false)}>아니오</button>
-                        </Modal>
-              </div>
-            {/* </div>
-          </div>
-        )}
-      </div> */}
+          
+        </div>
+          <button onClick={()=> setModalIsOpen(true)}>등록하기</button>
+            <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={ModalStyle}>
+      	      <br/>등록하시겠습니까?<br/><br/>
+                            
+              <button>네</button>
+                            
+              <button onClick={()=> setModalIsOpen(false)}>아니오</button>
+            </Modal>
+        </div>
     </div>
   );
 }
