@@ -35,7 +35,25 @@ function Use(){
                 <h1>Photo Uploader</h1>
                 <PhotoUploader onUpload={handleUpload} />
                 {files.map((file)=>(
-                    <img key={file.name} src={URL.createObjectURL(file)} alt={file.name} />
+                    <table>
+                        <tr>
+                            <td>변환 사진 1</td>
+                            <td><img key={file.name} src={URL.createObjectURL(file)} alt={file.name} /></td>
+                        </tr>
+                        <tr>
+                            <td>변환 사진2</td>
+                            <td><img key={file.name} src={URL.createObjectURL(file)} alt={file.name} /></td>
+                        </tr>
+                        <tr>
+                            <td>변환 사진3</td>
+                            <td><img key={file.name} src={URL.createObjectURL(file)} alt={file.name} /></td>
+                        </tr>
+                        <tr>
+                            <td>변환 사진4</td>
+                            <td><img key={file.name} src={URL.createObjectURL(file)} alt={file.name} /></td>
+                        </tr>
+                     </table>
+                    
                 ))}
                 </div>
             </div>
