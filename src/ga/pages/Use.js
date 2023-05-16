@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import PhotoUploader from "../components/PhotoUploader";
 import '../styles/Use.css'
-
+//sd 캐릭터 표시 넣기 
+//버튼 클릭 factor 저장하게 
 
 function Use(){
     const [files, setFiles] = useState([]);
+    const [faces, setFaces]=useState([]);
 
     const handleUpload = (acceptedFiles) => {
         setFiles(acceptedFiles);
@@ -23,13 +25,7 @@ function Use(){
                         <button className="face">분노</button>
                         <button className="face">놀람</button>
                     </div>
-                    <div className="angle">
-                        <h1>angel</h1>
-                        <button className="angle">-30</button>
-                        <button className="angle">-15</button>
-                        <button className="angle">+15</button>
-                        <button className="angle">+30</button>
-                    </div>
+                
                 </div>
                 <div className="photoupload">
                 <h1>Photo Uploader</h1>
@@ -38,19 +34,19 @@ function Use(){
                     <table>
                         <tr>
                             <td>변환 사진 1</td>
-                            <td><img key={file.name} src={URL.createObjectURL(file)} alt={file.name} /></td>
+                            <td><img key={file.name} src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
                         </tr>
                         <tr>
                             <td>변환 사진2</td>
-                            <td><img key={file.name} src={URL.createObjectURL(file)} alt={file.name} /></td>
+                            <td><img key={file.name} src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
                         </tr>
                         <tr>
                             <td>변환 사진3</td>
-                            <td><img key={file.name} src={URL.createObjectURL(file)} alt={file.name} /></td>
+                            <td><img key={file.name} src={URL.createObjectURL(file)}style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
                         </tr>
                         <tr>
                             <td>변환 사진4</td>
-                            <td><img key={file.name} src={URL.createObjectURL(file)} alt={file.name} /></td>
+                            <td><img key={file.name} src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
                         </tr>
                      </table>
                     

@@ -1,10 +1,13 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 function PhotoUploader({ onUpload }) {
+  const [hasUploaded, setHasUploaded] = useState(false);
+
   const onDrop = useCallback(
     (acceptedFiles) => {
       onUpload(acceptedFiles);
+      setHasUploaded(true);
     },
     [onUpload]
   );
@@ -14,13 +17,12 @@ function PhotoUploader({ onUpload }) {
   return (
     <div {...getRootProps()}>
       <input {...getInputProps()} />
-      {isDragActive ? (
-        <p>Drop the files here ...</p>
-      ) : (
-        <p>Click to select files</p>
-      )}
+      {!hasUploaded && <p>Click to select files</p>}
+      {isDragActive && <p>Drop the files here ...</p>}
     </div>
   );
 }
 
 export default PhotoUploader;
+
+
