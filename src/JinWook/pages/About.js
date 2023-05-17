@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/About.css';
 import Header from '../components/Header'
+import samplegif from './samplegif.gif'
 
 function About() {
   return (
@@ -8,29 +9,19 @@ function About() {
       <Header />
       <div className="about-main">
         <div className="about-left">
-          <img src="/images/about-img.jpg" alt="about-img" />
+          <img src={samplegif} alt="about-img" />
           <p>설명 본문</p>
-          <img src="/images/about-img.jpg" alt="about-img" />
+          <img src={samplegif} alt="about-img" />
           <p>설명 본문</p>
-          <img src="/images/about-img.jpg" alt="about-img" />
+          <img src={samplegif} alt="about-img" />
           <p>설명 본문</p>
-          <img src="/images/about-img.jpg" alt="about-img" />
+          <img src={samplegif} alt="about-img" />
           <p>설명 본문</p>
-          <img src="/images/about-img.jpg" alt="about-img" />
+          <img src={samplegif} alt="about-img" />
           <p>설명 본문</p>
-          <img src="/images/about-img.jpg" alt="about-img" />
+          <img src={samplegif} alt="about-img" />
           <p>설명 본문</p>
-          <img src="/images/about-img.jpg" alt="about-img" />
-          <p>설명 본문</p>
-          <img src="/images/about-img.jpg" alt="about-img" />
-          <p>설명 본문</p>
-          <img src="/images/about-img.jpg" alt="about-img" />          
-          <p>설명 본문</p>
-          <img src="/images/about-img.jpg" alt="about-img" />
-          <p>설명 본문</p>
-          <img src="/images/about-img.jpg" alt="about-img" />
-          <p>설명 본문</p>
-          <img src="/images/about-img.jpg" alt="about-img" />
+          <img src={samplegif} alt="about-img" />
           <p>설명 본문</p>
         </div>
         <div className="about-right">

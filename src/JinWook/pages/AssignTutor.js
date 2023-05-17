@@ -3,6 +3,13 @@ import Header from "../components/Header";
 import "../styles/AssignTutor.css";
 import Modal from 'react-modal';
 
+const genresData = [
+  { id: 1, name: "장르1" },
+  { id: 2, name: "장르2" },
+  { id: 3, name: "장르3" },
+  { id: 4, name: "장르4" },
+];
+
 function AssignTutor() {
   const [introduction, setIntroduction] = useState("");
   const [genres, setGenres] = useState([]);
@@ -78,32 +85,17 @@ function AssignTutor() {
         <div className="genre-section">
           <h2>장르 선택</h2>
           <div className="genre-buttons">
-            <button
-              className={genres.includes("장르1") ? "selected" : ""}
-              onClick={() => handleGenreSelect("장르1")}
-            >
-              장르1
-            </button>
-            <button
-              className={genres.includes("장르2") ? "selected" : ""}
-              onClick={() => handleGenreSelect("장르2")}
-            >
-              장르2
-            </button>
-            <button
-              className={genres.includes("장르3") ? "selected" : ""}
-              onClick={() => handleGenreSelect("장르3")}
-            >
-              장르3
-            </button>
-            <button
-              className={genres.includes("장르4") ? "selected" : ""}
-              onClick={() => handleGenreSelect("장르4")}
-            >
-              장르4
-            </button>
+            {genresData.map((genre) => (
+              <button
+                key={genre.id}
+                className={genres.some((g) => g.id === genre.id) ? "selected" : ""}
+                onClick={() => handleGenreSelect(genre)}
+              >
+                {genre.name}
+              </button>
+            ))}
           </div>
-        </div>
+          </div>
         <div className="photo-section">
           <h2>사진 업로드</h2>
           <div className="photo-buttons">
