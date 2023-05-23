@@ -11,7 +11,7 @@ const TabBar = ({ currentTab, onTabChange }) => {
           className={currentTab === genre ? 'active' : ''}
           onClick={() => onTabChange(genre)}
         >
-          {genre}
+        {genre}
         </button>
       ))}
     </div>
@@ -19,3 +19,7 @@ const TabBar = ({ currentTab, onTabChange }) => {
 };
 
 export default TabBar;
+
+
+
+

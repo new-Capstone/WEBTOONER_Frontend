@@ -1,15 +1,26 @@
-import React from 'react';
+// 
+import React, { useEffect, useState } from 'react';
 
 const TutorImage = ({ genre }) => {
-  const imageDatas = {
-    느와르: ['image1.jpg', 'image2.jpg', 'image3.jpg'],
-    로맨스: ['image4.jpg', 'image5.jpg', 'image6.jpg'],
-    액션: ['image7.jpg', 'image8.jpg', 'image9.jpg'],
-    호러: ['image10.jpg', 'image11.jpg', 'image12.jpg']
-  };
+  const [images, setImages] = useState([]);
 
-  // 선택된 장르에 해당하는 이미지 배열 가져오기
-  const images = imageDatas[genre] || [];
+  useEffect(() => {
+    // 서버에서 이미지 데이터 가져오는 비동기 함수
+    const fetchImages = async () => {
+      try {
+        // 장르에 해당하는 이미지 데이터를 서버에서 가져온다고 가정
+        const response = await fetch(`서버주소/${genre}`);
+        const imageDatas = await response.json();
+
+        // 이미지 데이터 설정
+        setImages(imageDatas);
+      } catch (error) {
+        console.error('이미지 데이터를 가져오는 중 오류가 발생했습니다.', error);
+      }
+    };
+
+    fetchImages();
+  }, [genre]);
 
   return (
     <div className="TutorImage">

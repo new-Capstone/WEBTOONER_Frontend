@@ -7,7 +7,7 @@ import '../styles/Use.css'
 
 function Use(){
     const [files, setFiles] = useState([]);
-    const [faces, setFaces]=useState([]);
+    //const [faces, setFaces]=useState([]);
 
     const handleUpload = (acceptedFiles) => {
         setFiles(acceptedFiles);
