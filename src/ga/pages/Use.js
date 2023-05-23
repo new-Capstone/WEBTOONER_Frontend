@@ -57,7 +57,22 @@ function Use() {
                     <PhotoUploader onUpload={handleUpload} />
                     {files.map((file, index) => (
                         <table key={index}>
-                            {/* Rest of the code */}
+                            <tr>
+                                <td>변환 사진 1</td>
+                                <td><img src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
+                            </tr>
+                            <tr>
+                                <td>변환 사진 2</td>
+                                <td><img src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
+                            </tr>
+                            <tr>
+                                <td>변환 사진 3</td>
+                                <td><img src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
+                            </tr>
+                            <tr>
+                                <td>변환 사진 4</td>
+                                <td><img src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
+                            </tr>
                         </table>
                     ))}
                 </div>
@@ -67,5 +82,3 @@ function Use() {
 }
 
 export default Use;
-
-
