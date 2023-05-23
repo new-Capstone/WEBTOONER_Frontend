@@ -29,13 +29,9 @@ const FindTutor = () => {
       <TabBar currentTab={currentTab} onTabChange={handleTabChange} />
       <TutorImage genre={currentTab} page={page} limit={limit} />
       <div className="pagination">
-        <button
-          onClick={handlePreviousPage}
-          disabled={page === 1}
-        >
-          이전 페이지
-        </button>
-        <button onClick={handleNextPage}>다음 페이지</button>
+      <button type="button" class="btn btn-outline-success" onClick={handlePreviousPage} disabled={page === 1}>이전페이지</button>
+      <button type="button" class="btn btn-outline-success" onClick={handleNextPage} >다음페이지</button>
+
       </div>
     </div>
   );

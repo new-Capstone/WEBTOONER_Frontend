@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import '../styles/Main.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Main() {
   return (
@@ -19,10 +20,10 @@ function Main() {
               ...<br />
               <div class="button">
                 <Link to="/use">
-                  <button>사용하기</button>
+                  <button type="button" class="btn btn-outline-success">사용하기</button>
                 </Link>
               </div>
-            </div>
+            </div>ㄴ
           </div>
           <div class="main-right">사진 들어감</div>
         </div>

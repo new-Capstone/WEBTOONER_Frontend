@@ -13,6 +13,7 @@ import Edit from './Jieun/pages/Edit';
 import Tutorpage from './Jieun/pages/Tutorpage';
 import TutorApply from './Jieun/pages/TutorApply';
 import TutorPortfolio from './Jieun/pages/TutorPortfolio';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
