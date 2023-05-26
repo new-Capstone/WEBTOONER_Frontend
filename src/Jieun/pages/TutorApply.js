@@ -10,6 +10,13 @@ function TutorApply() {
   const [genres, setGenres] = useState([]);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
+  const genresData = [
+    { id: 1, name: "로맨스" },
+    { id: 2, name: "개그" },
+    { id: 3, name: "액션" },
+    { id: 4, name: "기타" },
+  ];
+
   const handleInputNicknameChange = (e) => {
     const { value } = e.target;
     setInputNickname(value);
@@ -73,30 +80,15 @@ function TutorApply() {
         <div className="genre-section">
           <h2>장르 선택</h2>
           <div className="genre-buttons">
-            <button
-              className={genres.includes("장르1") ? "selected" : ""}
-              onClick={() => handleGenreSelect("장르1")}
-            >
-              장르1
-            </button>
-            <button
-              className={genres.includes("장르2") ? "selected" : ""}
-              onClick={() => handleGenreSelect("장르2")}
-            >
-              장르2
-            </button>
-            <button
-              className={genres.includes("장르3") ? "selected" : ""}
-              onClick={() => handleGenreSelect("장르3")}
-            >
-              장르3
-            </button>
-            <button
-              className={genres.includes("장르4") ? "selected" : ""}
-              onClick={() => handleGenreSelect("장르4")}
-            >
-              장르4
-            </button>
+            {genresData.map((genre) => (
+              <button
+                key={genre.id}
+                className={genres.some((g) => g.id === genre.id) ? "selected" : ""}
+                onClick={() => handleGenreSelect(genre)}
+              >
+                {genre.name}
+              </button>
+            ))}
           </div>  
         </div>
 
