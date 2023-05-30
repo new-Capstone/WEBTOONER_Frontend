@@ -1,6 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Chat.css";
 import Header from "../components/Header";
+import axios from "axios";
+
+//axios
+
+function ChatFromServer() {
+  const [chat, setChat] = useState(null);
+  const [error, setError] = useState(null);
+
+  const fetchChat = async () => {
+    try {
+      //초기화
+      setError(null);
+      setChat(null);
+
+      const response = await axios.get("");
+
+      setChat(response.data);
+    } catch (e) {
+      setError(e);
+    }
+  };
+  useEffect(() => {
+    fetchChat();
+  }, []);
+}
+
+
+
+//axios end
 
 function Chat() {
   const [input, setInput] = useState("");
@@ -82,7 +111,9 @@ function Chat() {
             <button
               key={index}
               className={
-                selectedChatRoom === chatRoom ? "chat-room-btn active" : "chat-room-btn"
+                selectedChatRoom === chatRoom
+                  ? "chat-room-btn active"
+                  : "chat-room-btn"
               }
               onClick={() => handleChatRoomClick(chatRoom)}
             >
@@ -98,9 +129,20 @@ function Chat() {
             <strong>Details</strong>
           </div>
           <div className="chat-body">
+            {/* print axios data  */}
+
+            <ChatFromServer />
+
+            {/* print axios data end */}
+
             {/* 채팅 내역 */}
             {chatMessages[selectedChatRoom].map((chatMessage, index) => (
-              <div key={index} className={`chat-message ${chatMessage.sender === "User A" ? "left" : "right"}`}>
+              <div
+                key={index}
+                className={`chat-message ${
+                  chatMessage.sender === "User A" ? "left" : "right"
+                }`}
+              >
                 {chatMessage.message}
               </div>
             ))}
