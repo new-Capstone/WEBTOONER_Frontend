@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../styles/Chat.css";
 import Header from "../components/Header";
 
+  
+
 function Chat() {
   const [input, setInput] = useState("");
   const [chatRooms, setChatRooms] = useState([
