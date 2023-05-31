@@ -15,6 +15,7 @@ import TutorApply from './Jieun/pages/TutorApply';
 import TutorPortfolio from './Jieun/pages/TutorPortfolio';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import User from './JinWook/pages/User'
 
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(True);  로그인 여부
@@ -33,6 +34,7 @@ function App() {
         <Route path="/tutorportfolio" element={<TutorPortfolio />}/>
         <Route path="/assigntutor" element={<AssignTutor />}/>
         <Route path="/Use" element={<Use />}/>       
+        <Route path="/user" element={<User />}/>       
       </Routes>
   
   );

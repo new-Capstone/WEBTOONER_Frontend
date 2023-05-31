@@ -15,6 +15,7 @@ function Header() {
           <li><Link to="/assigntutor">Assign Tutor</Link></li>
           <li><Link to = "/mypage">My Page</Link></li>
           <li><Link to = "/chat">Chat</Link></li>
+          <li><Link to = "/user">Users</Link></li>
         </ul>
       </nav>
     </div>

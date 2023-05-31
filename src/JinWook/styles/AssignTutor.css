@@ -112,11 +112,11 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: white;
-    background-color: #333;
+    background-color: #94C0AA;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;    
   }
   
   .register-button:hover {
