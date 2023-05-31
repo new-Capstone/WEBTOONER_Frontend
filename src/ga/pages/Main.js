@@ -23,7 +23,7 @@ function Main() {
                   <button type="button" class="btn btn-outline-success">사용하기</button>
                 </Link>
               </div>
-            </div>ㄴ
+            </div>
           </div>
           <div class="main-right">사진 들어감</div>
         </div>

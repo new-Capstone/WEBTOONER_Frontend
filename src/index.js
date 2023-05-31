@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'bootstrap/dist/css/bootstrap.css'
 
 //페이지 이동 시 알아서 새로고침 시키기 위해 BrowserRouter를 임포트 해서 <App />에 감싸뒀음
 import { BrowserRouter } from 'react-router-dom';

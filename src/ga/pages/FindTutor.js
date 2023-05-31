@@ -4,6 +4,9 @@ import TabBar from '../components/TabBar';
 import TutorImage from '../components/TutorImage';
 import '../styles/FindTutor.css';
 
+
+// 아직 튜터 이미지 서버에서 안 가져와서 사진이 출력되지 않는거 같음
+
 const FindTutor = () => {
   const [currentTab, setCurrentTab] = useState('느와르');
   const [page, setPage] = useState(1);
@@ -26,9 +29,13 @@ const FindTutor = () => {
   return (
     <div>
       <Header />
+      <div className="TabBarContainer">
       <TabBar currentTab={currentTab} onTabChange={handleTabChange} />
+      </div>
+      <div className="TutorImage">
       <TutorImage genre={currentTab} page={page} limit={limit} />
-      <div className="pagination">
+      </div>
+      <div className="Separate_page_bnt">
       <button type="button" class="btn btn-outline-success" onClick={handlePreviousPage} disabled={page === 1}>이전페이지</button>
       <button type="button" class="btn btn-outline-success" onClick={handleNextPage} >다음페이지</button>
 

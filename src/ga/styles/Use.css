@@ -6,11 +6,10 @@
 
 .main_sidebar{
     float:left;
-    width:200px;
+    width:220px;
     background-color: #f3f3f3;
-    border-right: 1px solid #e0e0e0; 
+    border-right: 3px solid #08d862; 
     padding: 20px;
-    border-right: 1px solid #ccc;
     overflow-y: auto;
     margin-left:20px;
     margin-right:20px;
@@ -24,27 +23,31 @@
     margin-left:20px;
   }
 
-.face button,
-.angle button {
+.face button{
   display: block;
   text-align: left;
   margin: 10px 0;
   margin-left:20px;
 }
 
-.bnt{
-    margin-top: 200px;
-    margin-left:100px;
-    border: none;
-    color: silver;
-    padding: 40px 90px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 40px;
-    margin: 10px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    border-radius: 10%;
+.try button{
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+  margin-left:20px;  
+  margin-top:160px;
+  width:57px;
+  text-align:center;
+}
+
+.SD-Character{
+  font-size: small;
+  margin-top:20px;
+}
+
+
+.selected {
+  background-color: #34d399;
+  color: white;
 }
 
