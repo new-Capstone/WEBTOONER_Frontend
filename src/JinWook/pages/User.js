@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function Users() {
   const [users, setUsers] = useState(null);
@@ -9,19 +9,19 @@ function Users() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        // 요청이 시작 할 때에는 error 와 users 를 초기화하고
         setError(null);
         setUsers(null);
-        // loading 상태를 true 로 바꿉니다.
         setLoading(true);
 
-        const request = await axios.post(
-            'http://capstone-webtooner.com/user/sign-up'
-        )
-        const response = await axios.get(
-          'http://capstone-webtooner.com/user'
-        );
-        setUsers(response.data); // 데이터는 response.data 안에 들어있습니다.
+        const response = await axios
+          .get("http://capstone-webtooner.com/user", {
+            params: {
+              userId: 11,
+            },
+          })
+          .then((response) => {
+            console.log(response.data);
+          });
       } catch (e) {
         setError(e);
       }
@@ -31,18 +31,10 @@ function Users() {
     fetchUsers();
   }, []);
 
-  if (loading) return <div>로딩중..</div>;
-  if (error) return <div>에러가 발생했습니다</div>;
-  if (!users) return null;
-  return (
-    <ul>
-      {users.map(user => (
-        <li key={user.id}>
-          {user.username} ({user.name})
-        </li>
-      ))}
-    </ul>
-  );
+  if (loading) return <div>,,,,,,,,,,</div>;
+  if (error) return <div>error</div>;
+  if (!users) return <div>!users</div>;
+  return <ul></ul>;
 }
 
 export default Users;
