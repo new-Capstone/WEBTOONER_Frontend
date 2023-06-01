@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const TutorImage = ({ genre, page, limit }) => {
   const [images, setImages] = useState([]);
@@ -8,8 +9,8 @@ const TutorImage = ({ genre, page, limit }) => {
     const fetchImages = async () => {
       try {
         // 장르와 페이지에 해당하는 이미지 데이터를 서버에서 가져온다고 가정
-        const response = await fetch(`서버주소/${genre}?page=${page}&limit=${limit}`);
-        const imageDatas = await response.json();
+        const response = await axios.get(`http://capstone-webtooner.com/portfolio/1/${genre}?page=${page}&limit=${limit}`);
+        const imageDatas = response.data;
 
         // 이미지 데이터 설정
         setImages(imageDatas);

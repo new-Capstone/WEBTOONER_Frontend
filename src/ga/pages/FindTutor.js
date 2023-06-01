@@ -38,7 +38,6 @@ const FindTutor = () => {
       <div className="Separate_page_bnt">
       <button type="button" class="btn btn-outline-success" onClick={handlePreviousPage} disabled={page === 1}>이전페이지</button>
       <button type="button" class="btn btn-outline-success" onClick={handleNextPage} >다음페이지</button>
-
       </div>
     </div>
   );

@@ -71,10 +71,13 @@
 
 .TabBarContainer {
   text-align: center;
+  margin-top: 35px;
 }
 
 .Separate_page_bnt{
+
   margin-top:200px;
+  text-align:center;
 }
 
   

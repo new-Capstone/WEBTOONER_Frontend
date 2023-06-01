@@ -119,8 +119,6 @@ function Use() {
                   <td>
                     <img src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} />
                   </td>
-                </tr>
-                <tr>
                   <td>변환 사진 2</td>
                   <td>
                     <img src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} />
@@ -131,8 +129,6 @@ function Use() {
                   <td>
                     <img src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} />
                   </td>
-                </tr>
-                <tr>
                   <td>변환 사진 4</td>
                   <td>
                     <img src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} />
