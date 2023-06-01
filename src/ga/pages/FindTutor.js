@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import TabBar from '../components/TabBar';
 import TutorImage from '../components/TutorImage';
 import '../styles/FindTutor.css';
+import axios from 'axios';
 
+//
 
-// 아직 튜터 이미지 서버에서 안 가져와서 사진이 출력되지 않는거 같음
 
 const FindTutor = () => {
   const [currentTab, setCurrentTab] = useState('느와르');
@@ -26,6 +27,16 @@ const FindTutor = () => {
     setPage((prevPage) => prevPage - 1); // 이전 페이지로 이동
   };
 
+  const [images, setImages] = useState("[]");
+
+  useEffect(() => {
+    axios({
+      method:'GET',
+      url: "http://capstone-webtooner.com/portfolio?portfolioId=6"
+    }).then(response => setImages(response.data))
+    })
+
+
   return (
     <div>
       <Header />
@@ -33,8 +44,11 @@ const FindTutor = () => {
       <TabBar currentTab={currentTab} onTabChange={handleTabChange} />
       </div>
       <div className="TutorImage">
-      <TutorImage genre={currentTab} page={page} limit={limit} />
+      {/* <TutorImage genre={currentTab} page={page} limit={limit} /> */}
+
+      <img src={images.imageUri}/>
       </div>
+
       <div className="Separate_page_bnt">
       <button type="button" class="btn btn-outline-success" onClick={handlePreviousPage} disabled={page === 1}>이전페이지</button>
       <button type="button" class="btn btn-outline-success" onClick={handleNextPage} >다음페이지</button>

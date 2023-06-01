@@ -3,23 +3,28 @@ import Header from "../components/Header";
 import PhotoUploader from "../components/PhotoUploader";
 import Modal from 'react-modal';
 // import axios from 'axios';
-
 import '../styles/Use.css';
 
 //사진 업로드 && factor 추가 되었다면 try 버튼 누를 수 있게 
 //try 버튼 클릭 시에 axios 호출 
 
+//Lora 모델
 function Use() {
   const [files, setFiles] = useState([]);
   const [selectedFace, setSelectedFace] = useState(null);
   const [isSDApplied, setIsSDApplied] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
   const [factor1,setfactor1]=useState(false); //사진
   const [factor2,setfactor2]=useState(false); //표정
   const [factor3,setfactor3]=useState(false); //sd 
+  const [factor4_1,setfactor4_1]=useState(false); //Lora 모델 1
+  const [factor4_2,setfactor4_2]=useState(false); //Lora 모델 1
+  const [factor4_3,setfactor4_3]=useState(false); //Lora 모델 1
 
-  
+
+
 
   const handleUpload = (acceptedFiles) => {
     setFiles(acceptedFiles);
@@ -35,9 +40,24 @@ function Use() {
     setfactor3(prevfactor3=>!prevfactor3);
     setIsSDApplied(prevIsSDApplied => !prevIsSDApplied); // SD 적용 여부 토글
   };
+
+  const handleLoraToggle1=()=>{
+    setfactor4_1(prevfactor4_1=>!prevfactor4_1);
+    
+  }
+
+  const handleLoraToggle2=()=>{
+    setfactor4_2(prevfactor4_2=>!prevfactor4_2);
+    
+  }
+
+  const handleLoraToggle3=()=>{
+    setfactor4_3(prevfactor4_3=>!prevfactor4_3);
+    
+  }
   
   const handleTry = () => {
-    if (factor1&&(factor2 || factor3)) {
+    if (factor1&&(factor2 || factor3||(factor4_1 || factor4_2 || factor4_3))) {
       setIsReady(true);
       // axiosCall();
     }else {
@@ -93,8 +113,35 @@ function Use() {
               놀람
             </button>
           </div>
+
+          <div className="Lora_model">
+            <h1 align="center" style={{fontSize:'17px', marginLeft:'10px'}}>Lora model</h1>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked={factor4_1} onChange={handleLoraToggle1} />
+              <label class="form-check-label" for="flexCheckDefault" >
+                치인트 
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked={factor4_2} onChange={handleLoraToggle2} />
+              <label class="form-check-label" for="flexCheckDefault">
+                모델이름2 
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked={factor4_3} onChange={handleLoraToggle3} />
+              <label class="form-check-label" for="flexCheckDefault">
+                모델이름3
+              </label>
+            </div>
+
+          </div>
+
           <div className="SD-Character">
-          <h1 align="center" style={{ fontSize:'20px'}}>SD 캐릭터</h1>
+          <h1 align="center" style={{ fontSize:'17px', marginLeft:'10px'}}>SD 캐릭터</h1>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked={isSDApplied} onChange={handleSDToggle}/>
               <label class="form-check-label" for="flexCheckDefault">
@@ -102,6 +149,8 @@ function Use() {
               </label>
             </div>
           </div>
+
+
           <div className="try">
           <button type="button" className="btn btn-outline-success" onClick={handleTry}>
           Try
