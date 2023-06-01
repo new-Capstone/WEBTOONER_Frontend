@@ -11,7 +11,9 @@ const TabBar = ({ currentTab, onTabChange }) => {
           key={genre}
           variant={currentTab === genre ? 'success' : 'outline-success'}
           className={currentTab === genre ? 'active' : ''}
-          onClick={() => onTabChange(genre)}
+          onClick={() => onTabChange(genre)
+          }
+          style={{marginLeft:"20px", width:"100px"}}
         >
           {genre}
         </Button>
