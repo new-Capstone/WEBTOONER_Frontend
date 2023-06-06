@@ -4,6 +4,9 @@
 import {Routes, Route } from 'react-router-dom';
 import Main from './ga/pages/Main';
 import FindTutor from './ga/pages/FindTutor';
+import FindTutor_romance from './ga/pages/FindTutor_romance';
+import FindTutor_action from './ga/pages/FindTutor_action';
+import FindTutor_horror from './ga/pages/FindTutor_horror';
 import Use from './ga/pages/Use';
 import About from './JinWook/pages/About';
 import Chat from './JinWook/pages/Chat';
@@ -29,7 +32,12 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/edit" element={<Edit/>} />
         <Route path="/tutorpage" element={<Tutorpage/>} />
-        <Route path="/findtutor" element={<FindTutor />}/>
+        
+        <Route path="/findtutor/noir" element={<FindTutor />}/>
+        <Route path="/findtutor/romance" element={<FindTutor_romance />}/>
+        <Route path="/findtutor/action" element={<FindTutor_action />}/>
+        <Route path="/findtutor/horror" element={<FindTutor_horror />}/>
+
         <Route path="/tutorapply" element={<TutorApply />}/>
         <Route path="/tutorportfolio" element={<TutorPortfolio />}/>
         <Route path="/assigntutor" element={<AssignTutor />}/>

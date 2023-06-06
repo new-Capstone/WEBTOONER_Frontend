@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Data from './mockdata_noir.json'
+import Data from './mockdata_action.json'
 import axios from 'axios';
 import Header from '../components/Header';
 import TabBar from '../components/TabBar';
@@ -60,7 +60,7 @@ function App() {
         <div className='image_container' style={{display:'flex', gap:"10px"}}>
           {records.map((record) => (
               <div key={record.portfolioId}>
-                <img src={record.imageUri} style={{width:"200px", height:"300px",borderRadius:"10px"}}/>
+                <img src={record.imageUri} style={{width:"200px", height:"300px"}}/>
               </div>
             ))}
         </div>

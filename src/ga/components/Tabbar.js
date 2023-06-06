@@ -1,26 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
-const TabBar = ({ currentTab, onTabChange }) => {
-  const genres = ['느와르', '로맨스', '액션', '호러'];
+const TabBar = () => {
+  const genres = ['noir', 'romance', 'action', 'horror'];
 
   return (
     <div className='Tab-bar'>
       {genres.map((genre) => (
-        <Button
+        <button
+          type="button"
+          className="btn btn-outline-success"
+          style={{ marginLeft: "20px", width: "100px" }}
           key={genre}
-          variant={currentTab === genre ? 'success' : 'outline-success'}
-          className={currentTab === genre ? 'active' : ''}
-          onClick={() => onTabChange(genre)
-          }
-          style={{marginLeft:"20px", width:"100px"}}
         >
-          {genre}
-        </Button>
+          <Link to={`/findtutor/${genre}`} style={{textDecoration:"none", color:"green", textTransform:"capitalize"}}>{genre}</Link>
+        </button>
       ))}
     </div>
   );
 };
 
 export default TabBar;
-

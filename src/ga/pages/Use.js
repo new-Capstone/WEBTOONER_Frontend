@@ -6,7 +6,9 @@ import Modal from 'react-modal';
 import '../styles/Use.css';
 
 //사진 업로드 && factor 추가 되었다면 try 버튼 누를 수 있게 
-//try 버튼 클릭 시에 axios 호출 
+//try 버튼 클릭 시에 axios 호출
+
+//입력받은 factor 값 저장하기 
 
 //Lora 모델
 function Use() {
@@ -15,6 +17,7 @@ function Use() {
   const [isSDApplied, setIsSDApplied] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const[gender,setGender]=useState(false);
 
   const [factor1,setfactor1]=useState(false); //사진
   const [factor2,setfactor2]=useState(false); //표정
@@ -24,7 +27,9 @@ function Use() {
   const [factor4_3,setfactor4_3]=useState(false); //Lora 모델 1
 
 
-
+  const handleGender=()=>{
+    setGender(prevgender=>!prevgender)
+  }
 
   const handleUpload = (acceptedFiles) => {
     setFiles(acceptedFiles);
@@ -57,7 +62,7 @@ function Use() {
   }
   
   const handleTry = () => {
-    if (factor1&&(factor2 || factor3||(factor4_1 || factor4_2 || factor4_3))) {
+    if (factor1&&(factor2 &&factor3&&(factor4_1 || factor4_2 || factor4_3))) {
       setIsReady(true);
       // axiosCall();
     }else {
@@ -83,7 +88,7 @@ function Use() {
       <div className="main_container">
         <div className="main_siderbar">
           <div className="face">
-            <h1 align="center" style={{ fontSize:'26px'}}> face</h1>
+            <h1 align="center" style={{ fontSize:'26px',fontWeight:'bold'}}> face</h1>
             <button
               type="button"
               className={`btn btn-outline-success ${selectedFace === "기쁨" ? "selected" : ""}`}
@@ -115,7 +120,7 @@ function Use() {
           </div>
 
           <div className="Lora_model">
-            <h1 align="center" style={{fontSize:'17px', marginLeft:'10px'}}>Lora model</h1>
+            <h1 align="center" style={{fontSize:'17px', marginLeft:'10px',fontWeight:'bold'}}>Lora model</h1>
 
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked={factor4_1} onChange={handleLoraToggle1} />
@@ -140,10 +145,19 @@ function Use() {
 
           </div>
 
+          <div className="genderseleted">
+          <h1 align="center" style={{ fontSize:'15px', fontWeight:'bold'}}>Gender Selected</h1>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked={gender} onChange={handleGender}/>
+              <label class="form-check-label" for="flexSwitchCheckDefault">남/여</label>
+            </div>
+          </div>
+
+
           <div className="SD-Character">
-          <h1 align="center" style={{ fontSize:'17px', marginLeft:'10px'}}>SD 캐릭터</h1>
+          <h1 align="center" style={{ fontSize:'17px', marginLeft:'10px',fontWeight:'bold'}}>SD 캐릭터</h1>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked={isSDApplied} onChange={handleSDToggle}/>
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onChange={handleSDToggle}/>
               <label class="form-check-label" for="flexCheckDefault">
                 SD 적용하기 
               </label>
