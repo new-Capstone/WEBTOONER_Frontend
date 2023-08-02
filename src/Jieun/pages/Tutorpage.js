@@ -1,7 +1,11 @@
 import React from 'react';
 import Header from '../components/Header'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import '../styles/Mypage.css'
+import horror from '../styles/horror.webp'
+import horror2 from '../styles/horror2.jpg'
+import horror3 from '../styles/horror3.jpg'
+import seol from '../styles/seol.jpg'
 
 function Tutorpage() {
     const tutor = {
@@ -15,7 +19,9 @@ function Tutorpage() {
         <Header />
         <div className="mp-main">
             <div className="mp-left">
-                <img src="https://via.placeholder.com/231x231" alt="side-image" />
+                <h1>Tutor Page</h1>
+                <img src={seol} alt="side-image" />
+                {/* "https://via.placeholder.com/231x231" */}
                     <ul>
                         <li>{tutor.nickname}</li>
                         <li>{tutor.email}</li>
@@ -24,9 +30,10 @@ function Tutorpage() {
             </div>
 
             <div className='mp-right'>
-                <img src="https://via.placeholder.com/600x300"/>
-                <img src="https://via.placeholder.com/600x300"/>
-                <img src="https://via.placeholder.com/600x300"/>
+                <h1>portfolio</h1>
+                <img src={horror} />
+                <img src={horror2} />
+                <img src={horror3} />
                 <p>튜터에게 연락하기</p>
                 <Link to='/chat'>
                     <button>contact</button>

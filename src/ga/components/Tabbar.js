@@ -1,7 +1,7 @@
 import React from 'react';
 
-const TabBar = ({ currentTab, onTabChange }) => {
-  const genres = ['느와르', '로맨스', '액션', '호러'];
+const Tabbar = ({ currentTab, onTabChange }) => {
+  const genres = ['호러', '로맨스', '액션', '기타'];
 
   return (
     <div className='Tab-bar'>
@@ -18,4 +18,4 @@ const TabBar = ({ currentTab, onTabChange }) => {
   );
 };
 
-export default TabBar;
+export default Tabbar;

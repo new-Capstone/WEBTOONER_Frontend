@@ -11,8 +11,8 @@ function TutorApply() {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const genresData = [
-    { id: 1, name: "로맨스" },
-    { id: 2, name: "개그" },
+    { id: 1, name: "호러" },
+    { id: 2, name: "로맨스" },
     { id: 3, name: "액션" },
     { id: 4, name: "기타" },
   ];

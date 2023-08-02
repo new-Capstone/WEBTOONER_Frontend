@@ -1,12 +1,11 @@
 .main-left-title {
     font-weight: bold;
     font-size:xx-large;
-    margin-left: 200px;
 }
 
 .main-left {
-    margin-top: 100px;
-    margin-left:200px;
+    margin-top: 10px;
+    margin-left: 20px;
 
 }
 
@@ -18,5 +17,13 @@
 }
 
 .main-left-des{
-    margin-left:200px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.main-left-des img {
+    margin-left: 13%;
+    border-radius: 20px;
+    width: 1100px;
+    height:500px;
 }
