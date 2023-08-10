@@ -1,0 +1,105 @@
+.main_container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.main_sidebar{
+    float:left;
+    width:300px;
+    padding: 20px;
+    border-right: 1px solid #94C0AA;
+    overflow-y: auto;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.photoupload {
+    flex:1;
+    float:right;
+    /* border-left: 1px solid #94C0AA; */
+    overflow-y: auto;
+    margin-left:60px;
+  }
+
+.face {
+  padding-left: 20%;
+  padding-right: 60px;
+}
+
+.face .face-buttons button {
+  display: block;
+  text-align: center;
+  margin: 5px 0;
+
+  width: 95px;  
+  color: #6cb48f;
+  background-color: #ffffff;
+  border: none;
+  border-style: solid;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.face .face-buttons button.selected {
+  color: #ffffff;
+  background-color: #6cb48f;
+}
+
+.bnt{
+    margin-top: 200px;
+    margin-left:100px;
+    border: none;
+    color: silver;
+    padding: 40px 90px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    margin: 10px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-radius: 10%;
+}
+
+.photoupload img {
+  margin-right: 20px;
+  width: 600px;
+  height: 400px;
+  border-radius: 20px;
+}
+
+.photoupload button {
+  margin-top: 20px;
+  margin-left: 85%;
+}
+
+.face .face-buttons .dt-button button {
+  color: #ffffff;
+  background-color: #6cb48f;
+  display: block;
+  text-align: center;
+  margin: 5px 0;
+
+  width: 95px;  
+  border: none;
+  border-style: solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-button {
+  display: block;
+  text-align: center;
+  margin: 5px 0;
+
+  width: 95px;  
+  color: #ffffff;
+  background-color: #6cb48f;
+  border: none;
+  border-style: solid;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 42%;
+}

@@ -2,23 +2,22 @@
 //Switch와 Route를 이용해 여러 페이지 간 이동을 구현할 수 있음
 
 import {Routes, Route } from 'react-router-dom';
-import Main from './ga/pages/Main';
-import FindTutor from './ga/pages/FindTutor';
-import FindTutor_romance from './ga/pages/FindTutor_romance';
-import FindTutor_action from './ga/pages/FindTutor_action';
-import FindTutor_horror from './ga/pages/FindTutor_horror';
-import Use from './ga/pages/Use';
-import About from './JinWook/pages/About';
-import Chat from './JinWook/pages/Chat';
-import AssignTutor from './JinWook/pages/AssignTutor';
-import Mypage from './Jieun/pages/Mypage';
-import Edit from './Jieun/pages/Edit';
-import Tutorpage from './Jieun/pages/Tutorpage';
-import TutorApply from './Jieun/pages/TutorApply';
-import TutorPortfolio from './Jieun/pages/TutorPortfolio';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import User from './JinWook/pages/User'
+import Main from './pages/Main';
+import FindTutor from './pages/FindTutor';
+import Use from './pages/Use';
+import About from './pages/About';
+import Chat from './pages/Chat';
+import AssignTutor from './pages/AssignTutor';
+import Mypage from './pages/Mypage';
+import Edit from './pages/Edit';
+import Tutorpage from './pages/Tutorpage';
+import TutorApply from './pages/TutorApply';
+import TutorPortfolio from './pages/TutorPortfolio';
+import Users from './pages/Users';
+import FindTutor_romance from './pages/FindTutor_romance';
+import FindTutor_action from './pages/FindTutor_action';
+import FindTutor_horror from './pages/FindTutor_horror';
+import ChatTest from './pages/ChatTest';
 
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(True);  로그인 여부
@@ -32,19 +31,19 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/edit" element={<Edit/>} />
         <Route path="/tutorpage" element={<Tutorpage/>} />
-        
-        <Route path="/findtutor/noir" element={<FindTutor />}/>
-        <Route path="/findtutor/romance" element={<FindTutor_romance />}/>
-        <Route path="/findtutor/action" element={<FindTutor_action />}/>
-        <Route path="/findtutor/horror" element={<FindTutor_horror />}/>
-
+        <Route path="/findtutor" element={<FindTutor />}/>
         <Route path="/tutorapply" element={<TutorApply />}/>
         <Route path="/tutorportfolio" element={<TutorPortfolio />}/>
         <Route path="/assigntutor" element={<AssignTutor />}/>
         <Route path="/Use" element={<Use />}/>       
-        <Route path="/user" element={<User />}/>       
+        <Route path="/users" element={<Users />} />
+        <Route path="/findtutor/romance" element={<FindTutor_romance />}/>
+        <Route path="/findtutor/action" element={<FindTutor_action />}/>
+        <Route path="/findtutor/horror" element={<FindTutor_horror />}/> 
+        <Route path="/chattest" element={<ChatTest />} />
+
+
       </Routes>
-  
   );
 }
 

@@ -7,14 +7,15 @@ import '../styles/Header.css';
 function Header() {
   return (
     <div className="header">
-      <Link to="/" className="logo">My Logo</Link>
+      <Link to="/" className="logo"><p className="logo">WEBTOONER</p></Link>
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to = "/mypage">My Page</Link></li>
-          <li><Link to= "/findtutor">Tutor</Link></li>
-          <li><Link to = "/chat">Chat</Link></li>
+          <li><Link to="/"><p>Home</p></Link></li>
+          <li><Link to="/about"><p>About</p></Link></li>
+          <li><Link to = "/chat"><p>Chat</p></Link></li>
+          <li><Link to = "/ChatTest"><p>ChatTest</p></Link></li>
+          <li><Link to = "/Tutorapply"><p>Apply</p></Link></li>
+          <li><Link to = "/Mypage"><p>MyPage</p></Link></li>
         </ul>
       </nav>
     </div>
@@ -22,4 +23,6 @@ function Header() {
 }
 
 export default Header;
+
+
 
