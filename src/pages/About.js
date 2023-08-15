@@ -5,13 +5,14 @@ import samplegif from "./samplegif.gif";
 import Button from "react-bootstrap/Button";
 import UseApi from "../components/UseApi";
 
+//          <UseApi /> 로 조회 가능
+
 function About() {
   return (
     <div className="about-container">
       <Header />
       <div className="about-main">
         <div className="about-left">
-          <UseApi />
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
           <Button variant="success">Success</Button>
@@ -21,7 +22,7 @@ function About() {
           <Button variant="light">Light</Button>
           <Button variant="dark">Dark</Button>
           <Button variant="link">Link</Button>
-        
+
           <img src={samplegif} alt="about-img" />
           <p>설명 본문</p>
           <img src={samplegif} alt="about-img" />

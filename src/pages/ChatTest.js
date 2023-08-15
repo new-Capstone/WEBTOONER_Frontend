@@ -35,9 +35,9 @@ function ChatTest() {
         ws.debug = console.log; // Enable debug logging
         console.log("test");
 
-
         setTimeout(() => console.log(sock), 5000);
         setTimeout(() => console.log(sock.readyState), 5000);
+
         ws.connect(
           {},
           function (frame) {
@@ -48,9 +48,13 @@ function ChatTest() {
             ws.send(
               "/pub/chat/message",
               {},
-              JSON.stringify({ type: 'TALK', roomId: '1', sender: 'sender', message: 'message' }) // Replace 'roomId', 'sender', and 'message' with actual values
+              JSON.stringify({
+                type: "TALK",
+                roomId: "1",
+                sender: "sender",
+                message: "message",
+              }) // Replace 'roomId', 'sender', and 'message' with actual values
             );
-            
           },
           handleWebSocketError
         );
