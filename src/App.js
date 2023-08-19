@@ -19,30 +19,35 @@ import FindTutor_horror from "./pages/FindTutor_horror";
 import ChatTest from "./pages/ChatTest";
 import SignupPage from "./pages/SignupPage";
 
+import { AuthProvider } from "./components/AuthContext";
+
+
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(True);  로그인 여부
 
   return (
-    <Routes>
-      {/* <Route/>를 이용해 페이지를 추가할 수 있음 */}
-      <Route exact path="/" element={<Main />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/mypage" element={<Mypage />} />
-      <Route path="/chat" element={<Chat />} />
-      <Route path="/edit" element={<Edit />} />
-      <Route path="/tutorpage" element={<Tutorpage />} />
-      <Route path="/findtutor" element={<FindTutor />} />
-      <Route path="/tutorapply" element={<TutorApply />} />
-      <Route path="/tutorportfolio" element={<TutorPortfolio />} />
-      <Route path="/assigntutor" element={<AssignTutor />} />
-      <Route path="/Use" element={<Use />} />
-      <Route path="/users" element={<Users />} />
-      <Route path="/findtutor/romance" element={<FindTutor_romance />} />
-      <Route path="/findtutor/action" element={<FindTutor_action />} />
-      <Route path="/findtutor/horror" element={<FindTutor_horror />} />
-      <Route path="/chattest" element={<ChatTest />} />
-      <Route path="/signuppage" element={<SignupPage />} />
-    </Routes>
+    <AuthProvider>
+      <Routes>
+        {/* <Route/>를 이용해 페이지를 추가할 수 있음 */}
+        <Route exact path="/" element={<Main />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/mypage" element={<Mypage />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/edit" element={<Edit />} />
+        <Route path="/tutorpage" element={<Tutorpage />} />
+        <Route path="/findtutor" element={<FindTutor />} />
+        <Route path="/tutorapply" element={<TutorApply />} />
+        <Route path="/tutorportfolio" element={<TutorPortfolio />} />
+        <Route path="/assigntutor" element={<AssignTutor />} />
+        <Route path="/Use" element={<Use />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/findtutor/romance" element={<FindTutor_romance />} />
+        <Route path="/findtutor/action" element={<FindTutor_action />} />
+        <Route path="/findtutor/horror" element={<FindTutor_horror />} />
+        <Route path="/chattest" element={<ChatTest />} />
+        <Route path="/signuppage" element={<SignupPage />} />
+      </Routes>
+    </AuthProvider>
   );
 }
 

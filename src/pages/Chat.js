@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Chat.css";
 import Header from "../components/Header";
 import axios from "axios";
-
+import ChatComponent from "../components/ChatComponent";
 //axios
 
 function ChatFromServer() {
@@ -27,11 +27,7 @@ function ChatFromServer() {
   }, []);
 }
 
-
-
 //axios end
-
-  
 
 function Chat() {
   const [input, setInput] = useState("");
@@ -106,6 +102,8 @@ function Chat() {
   return (
     <div className="main-header">
       <Header />
+      <ChatComponent />
+
       <div className="chat-container">
         <div className="chat-sidebar">
           {/* 채팅방 목록 */}
