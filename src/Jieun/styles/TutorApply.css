@@ -45,14 +45,14 @@
     font-size: 1.1rem;
     font-weight: bold;
     color: white;
-    background-color: #333;
+    background-color: #94C0AA;
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
   
   .genre-section .genre-buttons button.selected {
-    background-color: #ffcc00;
+    background-color: #6cb48f;
   }
   
   /* Photo section */
@@ -98,6 +98,7 @@
     height: 100%;
     opacity: 0;
     cursor: pointer;
+  
   }
   
   /* Register button */

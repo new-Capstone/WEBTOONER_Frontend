@@ -2,22 +2,25 @@ import { useEffect, useState } from 'react';
 import Data from './mockdata_noir.json'
 import axios from 'axios';
 import Header from '../components/Header';
-import TabBar from '../components/TabBar';
+import Tabbar from '../components/Tabbar';
+import { Link } from 'react-router-dom';
 
-// useEffect(() => {
-//   axios
-//     .get('http://capstone-webtooner.com/portfolio', {
-//       params: {
-//         portfolioId: 1,
-//       },
-//     })
-//     .then((response) => {
-//       setImages(response.data);
-//       console.log(response.data);
-//     });
-// }, []);
 
 function App() {
+
+  // useEffect(() => {
+  //   axios
+  //     .get('http://capstone-webtooner.com/portfolio/category?tutorId=10&categoryName=noir', {
+  //       params: {
+  //         portfolioId: 1,
+  //       },
+  //     })
+  //     .then((response) => {
+  //       setImages(response.data);
+  //       console.log(response.data);
+  //     });
+  // }, []);
+  
   // 기본 페이지 1페이지부터 시작
   const [currentPage, setCurrentPage] = useState(1);
   // 화면에 보여주고 싶은 페이지당 정보 개수
@@ -53,14 +56,14 @@ function App() {
   return (
     <div>
       <Header/>
-
-
       <div className="main_container" style={{gap:"20px",display:"flex",flexDirection:"column",justifyContent:"flex-start",alignItems:"center",marginTop:"10px"}}>
-        <TabBar/>
+        <Tabbar/>
         <div className='image_container' style={{display:'flex', gap:"10px"}}>
           {records.map((record) => (
               <div key={record.portfolioId}>
+                <Link to="/Tutorpage">
                 <img src={record.imageUri} style={{width:"200px", height:"300px",borderRadius:"10px"}}/>
+                </Link>
               </div>
             ))}
         </div>

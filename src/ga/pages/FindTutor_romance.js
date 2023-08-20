@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Data from './mockdata_romance.json'
 import axios from 'axios';
 import Header from '../components/Header';
-import TabBar from '../components/TabBar';
+import Tabbar from '../components/Tabbar';
 
 // useEffect(() => {
 //   axios
@@ -56,11 +56,11 @@ function App() {
 
 
       <div className="main_container" style={{gap:"20px",display:"flex",flexDirection:"column",justifyContent:"flex-start",alignItems:"center",marginTop:"10px"}}>
-        <TabBar/>
+        <Tabbar/>
         <div className='image_container' style={{display:'flex', gap:"10px"}}>
           {records.map((record) => (
               <div key={record.portfolioId}>
-                <img src={record.imageUri} style={{width:"200px", height:"300px"}}/>
+                <img src={record.imageUri} style={{width:"200px", height:"300px",borderRadius:"10px"}}/>
               </div>
             ))}
         </div>

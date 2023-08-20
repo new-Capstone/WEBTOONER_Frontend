@@ -55,9 +55,6 @@ button {
   
     cursor: pointer;
   
-    border-style: solid;
-  
-    border-radius: 5px;
   }
 
   .mp-container {
@@ -80,23 +77,23 @@ button {
   
   .mp-main {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: flex-start;
-    gap: 0px;
+    gap: 40px;
     /* margin: 50px 0; */
     /* border-top: 1px solid #ccc; */
     /* border-bottom: 1px solid #ccc; */
-    padding: 0px;
+    padding: 50px 0;
   }
   
-  .mp-left {
+  .use-left {
     margin-left: 40px;
   }
   
   .mp-left img {
     width: 230px;
     height: 230px;
-    border-radius: 50%;
+    border-radius: 20px;
   }
 
   .mp-left ul li {
@@ -110,7 +107,7 @@ button {
     position: relative;
     flex-direction: column;
     padding: 1px;
-    margin-left: 13%;
+    margin-left: 15%;
   }
 
   .mp-right img {
@@ -118,3 +115,6 @@ button {
     height: 300px;
     border-radius: 20px;
   }
+
+  
+  

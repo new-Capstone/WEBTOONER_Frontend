@@ -1,10 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from '../components/Header'
 import { Link } from 'react-router-dom';
 import '../styles/Mypage.css'
 import Modal from 'react-modal';
+import axios from "axios";
 
 function TutorPortfolio() {
+//
+    const onChangeImg = (e) => {
+        e.preventDefault();
+        
+        if(e.target.files){
+          const uploadFile = e.target.files[0]
+          const formData = new FormData()
+          formData.append('files',uploadFile)
+          console.log(uploadFile)
+         
+          axios({
+            method: 'post',
+            url: "http://capstone-webtooner.com/portfolio",
+            data: formData,
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          });
+
+          console.log(uploadFile)
+        }
+      }
+
+      const [files, setFiles] = useState([]);
+      useEffect(() => {
+        axios({
+            method: 'get',
+            url: "http://capstone-webtooner.com/portfolio"
+        }).then(response => setFiles(response.data))
+      })
+//
+
 
     const [imageData, setImageData] = useState([]);
 
@@ -42,6 +75,19 @@ function TutorPortfolio() {
                 <h1>포트폴리오 등록</h1>
             </div>
             <div className="mp-main">
+
+ {/*  */}
+            {/* <form>
+                    <label htmlFor="profile-upload" />
+                    <input type="file" id="profile-upload" accept="image/*" onChange={onChangeImg}/>
+            </form>
+            {files.map(file => (
+                <li key = {file.portfolioId}>
+                    <div>{file.tutorId}</div>
+                </li>
+            ))} */}
+{/*  */}
+
             {[1,2,3,4].map((index) => (
                 <div className="upload-box" key={index}>
                     <label htmlFor={`file-input-${index}`}>

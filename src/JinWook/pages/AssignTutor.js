@@ -4,10 +4,10 @@ import "../styles/AssignTutor.css";
 import Modal from 'react-modal';
 
 const genresData = [
-  { id: 1, name: "장르1" },
-  { id: 2, name: "장르2" },
-  { id: 3, name: "장르3" },
-  { id: 4, name: "장르4" },
+  { id: 1, name: "호러" },
+  { id: 2, name: "로맨스" },
+  { id: 3, name: "액션" },
+  { id: 4, name: "기타" },
 ];
 
 function AssignTutor() {
