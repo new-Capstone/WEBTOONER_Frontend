@@ -1,7 +1,7 @@
 //Switch와 Route를 이용해 여러 페이지 간 이동을 구현할 수 있음
 
 import { Routes, Route } from "react-router-dom";
-import Main from "./pages/Main";
+import Main from "./pages/Main2";
 import FindTutor from "./pages/FindTutor";
 import Use from "./pages/Use";
 import About from "./pages/About";

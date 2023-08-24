@@ -1,0 +1,26 @@
+[
+  {
+    "portfolioId": 0,
+    "imageUri": "https://cdn.pixabay.com/photo/2016/09/29/10/08/halloween-1702531_1280.jpg",
+    "tutorId": 4,
+    "category": "string"
+  },
+  {
+    "portfolioId": 1,
+    "imageUri": "https://cdn.pixabay.com/photo/2023/08/07/08/51/ai-generated-8174637_640.jpg",
+    "tutorId": 5,
+    "category": "string"
+  },
+  {
+    "portfolioId": 2,
+    "imageUri": "https://cdn.pixabay.com/photo/2023/07/13/02/47/ai-generated-8123753_640.jpg",
+    "tutorId": 6,
+    "category": "string"
+  },
+  {
+    "portfolioId": 3,
+    "imageUri": "https://cdn.pixabay.com/photo/2023/07/28/09/12/zombie-8154861_640.jpg",
+    "tutorId": 7,
+    "category": "string"
+  }
+]

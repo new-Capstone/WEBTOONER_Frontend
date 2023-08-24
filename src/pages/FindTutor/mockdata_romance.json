@@ -1,0 +1,32 @@
+[
+  {
+    "portfolioId": 0,
+    "imageUri": "https://cdn.pixabay.com/photo/2023/08/10/15/20/romance-8181914_640.jpg",
+    "tutorId": 12,
+    "category": "string"
+  },
+  {
+    "portfolioId": 1,
+    "imageUri": "https://cdn.pixabay.com/photo/2022/12/18/13/48/skater-7663466_640.png",
+    "tutorId": 13,
+    "category": "string"
+  },
+  {
+    "portfolioId": 2,
+    "imageUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyFs9LE9sUT1_TvqqmndYXSm8xan6ZVv0PeQ&usqp=CAU",
+    "tutorId": 14,
+    "category": "string"
+  },
+  {
+    "portfolioId": 3,
+    "imageUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ0138-UE1j64Hn6hgD4KhxgybAq-D4PBEgQ&usqp=CAU",
+    "tutorId": 15,
+    "category": "string"
+  },
+  {
+    "portfolioId": 4,
+    "imageUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_Zs5sNLEWPA-10ovbzcUgNvwDvHXx3ytyA&usqp=CAU",
+    "tutorId": 16,
+    "category": "string"
+  }
+]

@@ -1,0 +1,75 @@
+main {
+    width: 100%;
+    height: 100vh;
+    color: #DFF8D5;
+    font-weight: bold;
+    background-size: cover;
+    background: rgb(0, 190, 0);
+    background: linear-gradient(90deg, rgba(0, 190, 0, 1) 0%, rgba(0, 167, 143, 1) 50%, rgba(0, 112, 225, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    border-radius: 5px;
+    z-index: 10;
+}
+
+main h4 {
+    font-size: 2rem;
+}
+
+main h2 {
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    letter-spacing: 3px;
+
+}
+
+main p {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+
+main button.use {
+    background-color: transparent;
+    width: 200px;
+    border: 3px solid #DFF8D5;
+    border-radius: 20px;
+    padding: 1 rem 2rem;
+    margin-top: 3rem;
+    color: #DFF8D5;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main h2 span::after {
+    content: "";
+    height: 40px;
+    width: 3px;
+    background-color: black;
+    display: inline-block;
+    animation: blink .7s ease-in-out infinite;
+
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}

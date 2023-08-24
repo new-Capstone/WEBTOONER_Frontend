@@ -1,0 +1,43 @@
+[
+    {
+        "tutorId": 8,
+        "nickname": "user1_noir",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "noir",
+        "portfolio_img": [
+            "https://cdn.pixabay.com/photo/2022/07/20/00/35/face-7333168_1280.png",
+            "https://cdn.pixabay.com/photo/2017/04/19/17/09/silhouettes-2242930_1280.png"
+        ]
+    },
+    {
+        "tutorId": 9,
+        "nickname": "user2_noir",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "noir",
+        "portfolio_img": [
+            "https://cdn.pixabay.com/photo/2022/11/11/04/30/skull-7584224_1280.jpg"
+        ]
+    },
+    {
+        "tutorId": 10,
+        "nickname": "user3_noir",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "noir",
+        "portfolio_img": [
+            "https://cdn.pixabay.com/photo/2023/04/06/22/46/cave-7905213_1280.jpg"
+        ]
+    },
+    {
+        "tutorId": 11,
+        "nickname": "user4_noir",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "noir",
+        "portfolio_img": [
+            "https://cdn.pixabay.com/photo/2022/12/25/00/47/detective-7676631_1280.jpg"
+        ]
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "portfolioId": 0,
+        "imageUri": "https://cdn.pixabay.com/photo/2022/07/20/00/35/face-7333168_1280.png",
+        "tutorId": 8,
+        "category": "string"
+    },
+    {
+        "portfolioId": 1,
+        "imageUri": "https://cdn.pixabay.com/photo/2022/11/11/04/30/skull-7584224_1280.jpg",
+        "tutorId": 9,
+        "category": "string"
+    },
+    {
+        "portfolioId": 2,
+        "imageUri": "https://cdn.pixabay.com/photo/2023/04/06/22/46/cave-7905213_1280.jpg",
+        "tutorId": 10,
+        "category": "string"
+    },
+    {
+        "portfolioId": 3,
+        "imageUri": "https://cdn.pixabay.com/photo/2022/12/25/00/47/detective-7676631_1280.jpg",
+        "tutorId": 11,
+        "category": "string"
+    }
+]
