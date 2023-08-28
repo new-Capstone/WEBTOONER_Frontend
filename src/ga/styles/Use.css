@@ -1,4 +1,12 @@
+@font-face {
+  font-family: 'Dovemayo_gothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .main_container{
+    font-family: 'Dovemayo_gothic';
     display: flex;
     flex-direction: row;
     height: 100vh;
@@ -31,13 +39,13 @@
   display: block;
   text-align: center;
   margin: 5px 0;
-
+  font-size: 20px;
   width: 95px;  
   color: #6cb48f;
   background-color: #ffffff;
   border: none;
   border-style: solid;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   
 }
@@ -85,15 +93,13 @@
   width: 95px;  
   border: none;
   border-style: solid;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 .upload-button {
   display: block;
   text-align: center;
-  margin: 5px 0;
-
   width: 95px;  
   color: #ffffff;
   background-color: #6cb48f;
@@ -101,5 +107,40 @@
   border-style: solid;
   border-radius: 5px;
   cursor: pointer;
-  margin-left: 42%;
+  margin-left: 44%;
+}
+
+.rt_button{
+  color: #ffffff;
+  background-color: #6cb48f;
+  display: block;
+  text-align: center;
+  margin: 5px 0;
+
+  width: 95px;  
+  border: none;
+  border-style: solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.photoupload .drop-box {
+  width: 1000px;
+  height: 400px;
+  border: 2px dashed #6cb48f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10%;
+  cursor: pointer;
+}
+
+.drop-box img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.drop-box span {
+  font-size: 16px;
+  color: #888;
 }

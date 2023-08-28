@@ -19,7 +19,7 @@ function Tutorpage() {
         <Header />
         <div className="mp-main">
             <div className="mp-left">
-                <h1>Tutor Page</h1>
+                <h1>튜터페이지</h1>
                 <img src={seol} alt="side-image" />
                 {/* "https://via.placeholder.com/231x231" */}
                     <ul>
@@ -30,7 +30,7 @@ function Tutorpage() {
             </div>
 
             <div className='mp-right'>
-                <h1>portfolio</h1>
+                <h1>포트폴리오</h1>
                 <img src={horror} />
                 <img src={horror2} />
                 <img src={horror3} />

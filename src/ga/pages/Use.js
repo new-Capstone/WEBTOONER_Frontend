@@ -57,7 +57,6 @@ function Use(){
         setSelected1(!selected1)
     }
     
-//31, 32, , 80, 89
     const [selected2, setSelected2] = useState(false)
     const onClickSad = (event) => {
         event.preventDefault();
@@ -132,14 +131,13 @@ function Use(){
 
   const [afterImage, setAfterImage] = useState("");
 
-  const url2='http://capstone-webtooner.com/afterimage?afterImageId=' + 180
+  const url2='http://capstone-webtooner.com/afterimage/userId?beforeImageId=' + mid
   useEffect(() => {
       axios({
           method: 'GET',
           url: url2
-        //   url:'http://capstone-webtooner.com/afterimage/userId?beforeImageId=194'
       }).then((response) => {
-        setAfterImage(response.data)
+        setAfterImage(response.data[0])
       }
       )
   })
@@ -159,6 +157,7 @@ function Use(){
 
   const [selectedFile, setSelectedFile] = useState("");
   const [previewUrl, setPreviewUrl] = useState(null);
+  
   const handleFileChange = (event) => {
     const file = event.target.files[0]
     setSelectedFile(file);
@@ -168,8 +167,31 @@ function Use(){
           setPreviewUrl(reader.result);
         };
         reader.readAsDataURL(file);
+
+        setShowDropBox(false);
       }
     };
+
+    const [showDropBox, setShowDropBox] = useState(true);
+    const handleDrop = (event) => {
+        event.preventDefault();
+        const file = event.dataTransfer.files[0];
+        setSelectedFile(file);
+    
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            setPreviewUrl(reader.result);
+          };
+          reader.readAsDataURL(file);
+
+          setShowDropBox(false);
+        }
+      };
+    
+      const handleDragOver = (event) => {
+        event.preventDefault();
+      };
 
     return(
         <div>
@@ -177,7 +199,7 @@ function Use(){
                 <div className="main_container">
                 <div className="main_siderbar">
                     <div className="face">
-                        <h1>표정</h1>
+                        <h1>faces</h1>
                         
                         <div className="face-buttons">
                         <button style = {{
@@ -196,15 +218,7 @@ function Use(){
                             backgroundColor: selected4 ? '#6cb48f' : '#FFFFFF',
                             color: selected4 ? '#FFFFFF' : '#6cb48f',}}
                             onClick={onClickAngry}>분노</button>
-                        {/* {genresData.map((genre) => (
-                        <button
-                            key={genre.id}
-                            className={genres.some((g) => g.id === genre.id) ? "selected" : ""}
-                            onClick={() => handleGenreSelect(genre)}
-                        >
-                            {genre.name}
-                        </button>
-                        ))} */}
+                        
                         <br/><br/><br/><br/><br/><br/><br/><br/>
                         <div className="dt-button">
                         <button style = {{
@@ -216,19 +230,27 @@ function Use(){
                         </div>
                     </div>
                     
-
-
                 </div>
                 <div className="photoupload">
                 <h1>내 파일 업로드하기</h1>
                 <label className="upload-button" for="input">
                     Upload
                 </label><br/>
-                <input type="file" id="input" style={{ display: "none" }} onChange={handleFileChange} />
-                {previewUrl && (
-                <img src={previewUrl} alt="Preview" />
-                )}
 
+                {/* 드래그 앤 드롭 영역 */}            
+                {showDropBox && (
+                <div
+                    className="drop-box"
+                    onDrop={handleDrop}
+                    onDragOver={handleDragOver}
+                >
+                    <span>Drop an artwork you want to transform here</span>
+                </div>
+                    )}
+
+                {previewUrl && <img src={previewUrl} alt="Preview" />}
+
+                <input type="file" id="input" style={{ display: "none" }} onChange={handleFileChange} />
                 {
                 try_bt ?
                     <img src= {afterImage.afterImageUri} />
@@ -236,32 +258,8 @@ function Use(){
                 }
                     {/* <img src= "https://capstone-webtooner.s3.ap-northeast-2.amazonaws.com/6ce0e9f5-b5ab-442b-bd24-f195e21dde50_.png" />        
                     <img src="https://capstone-webtooner.s3.ap-northeast-2.amazonaws.com/6ce0e9f5-b5ab-442b-bd24-f195e21dde50_.png"/> */}
-                <button onClick={onClickRefresh}>retry</button>
-                
-                {/* <PhotoUploader onUpload={handleUpload} />
-            
-
-                {files.map((file)=>(
-                    <table>
-                        <tr>
-                            <td>변환 사진 1</td>
-                            <td><img key={file.name} src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
-                        </tr>
-                        <tr>
-                            <td>변환 사진2</td>
-                            <td><img key={file.name} src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
-                        </tr>
-                        <tr>
-                            <td>변환 사진3</td>
-                            <td><img key={file.name} src={URL.createObjectURL(file)}style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
-                        </tr>
-                        <tr>
-                            <td>변환 사진4</td>
-                            <td><img key={file.name} src={URL.createObjectURL(file)} style={{ width: '400px', height: '200px' }} alt={file.name} /></td>
-                        </tr>
-                     </table>
-                    
-                ))} */}
+                    <button className="rt_button" onClick={onClickRefresh}>retry</button>
+        
                 </div>
             </div>
         </div>

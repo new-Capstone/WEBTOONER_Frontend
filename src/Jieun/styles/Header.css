@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'DOSPilgiMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family:'bitbit';
+  src:url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff'),url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2') ;
+}
+
 .header {
     display: flex;
     /*justify-content: space-between;*/
@@ -10,8 +22,8 @@
   }
   
   .logo {
-    font-family: 'Academic M54';
-    font-size: 30px;
+    font-family:'bitbit';
+    font-size: 35px;
     font-weight: bold;
     color: #6cb48f;
     text-decoration: none;

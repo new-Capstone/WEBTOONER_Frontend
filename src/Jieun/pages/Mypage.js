@@ -13,7 +13,7 @@ function Mypage() {
     useEffect(() => {
         axios({
             method: 'GET',
-            url:'http://capstone-webtooner.com/user?userId=20'
+            url:'http://capstone-webtooner.com/user?userId=6'
         }).then(response => setUser(response.data))
     })
 
@@ -26,7 +26,7 @@ function Mypage() {
     // })
 
     const [logs, setLogs] = useState("");
-    const id = 81
+    const id = 15
     const myurl = 'http://capstone-webtooner.com/beforeimage?beforeImageId='+ id
     
     useEffect(()=>{
@@ -63,7 +63,7 @@ function Mypage() {
         <Header />
         <div className="mp-main">
             <div className="mp-left">
-                <h1>My Page</h1>
+                <h1>마이페이지</h1>
                 <img src={user.profileImage}  alt="side-image" />
                     <ul>
                         <li>{user.username}</li> 

@@ -68,7 +68,7 @@ function TutorApply() {
             
             <h2>튜터 이메일</h2>
             <input type="text" value={inputEmail} onChange={handleInputEmailChange} placeholder="e-mail"/>
-
+      
           <h2>자기소개</h2>
           <textarea
             value={introduction}

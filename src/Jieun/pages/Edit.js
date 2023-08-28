@@ -13,7 +13,7 @@ function Edit() {
     useEffect(() => {
         axios({
             method: 'GET',
-            url:'http://capstone-webtooner.com/user?userId=20'
+            url:'http://capstone-webtooner.com/user?userId=6'
         }).then(response => setUser(response.data))
     })
     
@@ -26,7 +26,7 @@ function Edit() {
     // });
 
     const [logs, setLogs] = useState("");
-    const id = 81
+    const id = 15
     const myurl = 'http://capstone-webtooner.com/beforeimage?beforeImageId='+ id
     
     useEffect(()=>{
@@ -36,18 +36,6 @@ function Edit() {
         }).then(response => setLogs(response.data))
     })
 
-    const [imageData, setImageData] = useState([]);
-
-    function previewImage(event, index) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          setImageData((prevImageData) => [
-            ...prevImageData.filter((image) => image.id !== index),
-            { id: index, data: reader.result },
-          ]);
-        };
-        reader.readAsDataURL(event.target.files[0]);
-      }
 
     const handleSubmit = (userInfo) => {
         setUser({...user, ...userInfo });
@@ -74,35 +62,9 @@ function Edit() {
             <Header />
             <div className="mp-main">
                 <div className="mp-left">
-                <h1>My Page</h1>
-                {[1].map((index) => (
-                <div className="upload-box" key={index}>
-                    <label htmlFor={`file-input-${index}`}>
-                    {imageData.find((image) => image.id === index) ? (
-                        <img
-                        id={`previewImage-${index}`}
-                        src={imageData.find((image) => image.id === index).data}
-                        alt="Upload image"
-                        />
-                    ) : (
-                        <img
-                        id={`previewImage-${index}`}
-                        src="https://via.placeholder.com/150x150"
-                        alt="Upload image"
-                        />
-                    )}
-                    </label>
-                    <input
-                    id={`file-input-${index}`}
-                    type="file"
-                    accept="image/*"
-                    onChange={(event) => previewImage(event, index)}
-                    />
-                </div>
-                ))}
-
+                <h1>마이페이지</h1>
                     <User user={user} onSubmit={handleSubmit} />
-                        <button onClick={()=> setModalIsOpen(true)}>회원탈퇴</button>
+                        <button onClick={()=> setModalIsOpen(true)}>탈퇴</button>
                         <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={ModalStyle}>
       	                    <br/>회원탈퇴 하시겠습니까?<br/><br/>
                             <Link to="/">
