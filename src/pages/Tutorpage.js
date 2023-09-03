@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 import '../styles/Mypage.css'
 import horror from '../styles/horror.webp'
@@ -16,7 +15,6 @@ function Tutorpage() {
 
     return (
     <div className='mp-container'>
-        <Header />
         <div className="mp-main">
             <div className="mp-left">
                 <h1>Tutor Page</h1>

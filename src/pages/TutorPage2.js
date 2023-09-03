@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Header from '../components/Header'
 import { Link, useParams } from 'react-router-dom';
 import '../../Jieun/styles/Mypage.css';
 import noir from './TutorDetailData/noir.json';
@@ -65,7 +64,6 @@ const Tutorpage2 = () => {
     return (
         <div className='mp-container'>
 
-            <Header />
 
             <div className="mp-main" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                 <div className="mp-left" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>

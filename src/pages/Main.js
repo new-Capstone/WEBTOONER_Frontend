@@ -1,13 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
 import '../styles/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Main() {
   return (
     <div>
-      <Header />
       <div className="main-container">
         <div className="main-left">
           <div className="main-left-title">Title</div>

@@ -1,5 +1,4 @@
 import '../styles/Main2.css';
-import Header from '../components/Header';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 //import '../styles/Header_main.css';
@@ -35,7 +34,6 @@ const Main2 = () => {
 
     return (
         <div>
-            <Header isMain={true} />
             <main id="main">
                 <div className="container">
                     <h4>Welcome</h4>

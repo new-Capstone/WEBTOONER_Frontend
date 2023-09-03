@@ -10,7 +10,7 @@ function Header() {
   const [loginPassword, setLoginPassword] = useState(""); // 비밀번호 상태 관리
   const [loginError, setLoginError] = useState(""); // 로그인 오류 메시지 상태 관리
 
-  const { isLoggedIn, login, logout } = useAuth(); // useAuth 훅을 사용하여 로그인 상태 및 함수를 가져옴
+  const { isLoggedIn, login, logout, setAuthUserId } = useAuth();
 
   const openLoginPopup = () => {
     setShowLoginPopup(true);
@@ -43,11 +43,15 @@ function Header() {
       // 로그인 성공 처리
       console.log("로그인 성공:", response.data);
 
+      // 유저 ID 설정
+      setAuthUserId(response.data.userId); // 이 부분을 추가합니다.
+
       // 로그인 상태를 true로 설정
       login();
 
       // 로그인 팝업 닫기
       closeLoginPopup();
+      
     } catch (error) {
       // 로그인 실패 처리
       console.error("로그인 실패:", error);
@@ -83,11 +87,6 @@ function Header() {
           <li>
             <Link to="/chat">
               <p>Chat</p>
-            </Link>
-          </li>
-          <li>
-            <Link to="/ChatTest">
-              <p>ChatTest</p>
             </Link>
           </li>
           <li>

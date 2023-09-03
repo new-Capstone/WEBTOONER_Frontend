@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
 import PhotoUploader from "../components/PhotoUploader";
 import Modal from 'react-modal';
 // import axios from 'axios';
@@ -84,7 +83,6 @@ function Use() {
 
   return (
     <div>
-      <Header />
       <div className="main_container">
         <div className="main_siderbar">
           <div className="face">

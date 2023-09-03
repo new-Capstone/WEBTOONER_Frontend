@@ -31,90 +31,89 @@
 }
 */
 
+
+
 button {
-  
-    border: none;
-  
-    color: #6cb48f;
-  
-    background-color: #ffffff;
 
-    outline-color: #6cb48f;
+  border: none;
 
-    padding: 10px 25px;
-  
-    text-align: center;
-  
-    text-decoration: none;
-  
-    display: inline-block;
-  
-    font-size: 20px;
-  
-    margin: 4px 2px;
-  
-    cursor: pointer;
-  
-    border-style: solid;
-  
-    border-radius: 5px;
-  }
+  color: #6cb48f;
 
-  .mp-container {
-    display: flex;
-    flex-direction: column;
-  
-  }
-  
-  .mp-contents ul li{
-    width: 200px;
-    margin-right: 50px;
-    border-bottom: 1px solid #eee;
-    padding: 10px;
-    border-left: 1px solid #ccc;
-    position: sticky;
-    top: 10px;
-    height: calc(5vh - 10px);
-    overflow-y: auto;
-  }
-  
-  .mp-main {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 0px;
-    /* margin: 50px 0; */
-    /* border-top: 1px solid #ccc; */
-    /* border-bottom: 1px solid #ccc; */
-    padding: 0px;
-  }
-  
-  .mp-left {
-    margin-left: 40px;
-  }
-  
-  .mp-left img {
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-  }
+  background-color: #ffffff;
 
-  .mp-left ul li {
-    list-style: none;
-    margin-left: -40px;
-    font-size: 20px;
-  }
+  outline-color: #6cb48f;
 
-  .mp-right {
-    flex: 1;
-    position: relative;
-    flex-direction: column;
-    padding: 1px;
-    margin-left: 13%;
-  }
+  padding: 10px 25px;
 
-  .mp-right img {
-    width: 600px;
-    height: 300px;
-    border-radius: 20px;
-  }
+  text-align: center;
+
+  text-decoration: none;
+
+  display: inline-block;
+
+  font-size: 20px;
+
+  margin: 4px 2px;
+
+  cursor: pointer;
+
+}
+
+.mp-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.mp-contents ul li {
+  width: 200px;
+  margin-right: 50px;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  border-left: 1px solid #ccc;
+  position: sticky;
+  top: 10px;
+  height: calc(5vh - 10px);
+  overflow-y: auto;
+}
+
+.mp-main {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  gap: 40px;
+  /* margin: 50px 0; */
+  /* border-top: 1px solid #ccc; */
+  /* border-bottom: 1px solid #ccc; */
+  padding: 50px 0;
+}
+
+.use-left {
+  margin-left: 40px;
+}
+
+.mp-left img {
+  width: 230px;
+  height: 230px;
+  border-radius: 20px;
+}
+
+.mp-left ul li {
+  list-style: none;
+  margin-left: -40px;
+  font-size: 20px;
+}
+
+.mp-right {
+  flex: 1;
+  position: relative;
+  flex-direction: column;
+  padding: 1px;
+  margin-left: 15%;
+}
+
+.mp-right img {
+  width: 600px;
+  height: 300px;
+  border-radius: 20px;
+}

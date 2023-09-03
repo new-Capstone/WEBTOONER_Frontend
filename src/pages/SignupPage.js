@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
 import "../styles/SignupPage.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -55,7 +54,6 @@ function SignupPage() {
 
   return (
     <div>
-      <Header />
 
       <div className="assign-tutor-container">
         <h2>회원가입</h2>

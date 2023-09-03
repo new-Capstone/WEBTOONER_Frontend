@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
 import "../styles/AssignTutor.css";
 import Modal from 'react-modal';
 
@@ -72,7 +71,6 @@ function AssignTutor() {
 
   return (
     <div>
-      <Header />
       <div className="assign-tutor-container">
         <div className="introduction-section">
           <h2>자기소개</h2>

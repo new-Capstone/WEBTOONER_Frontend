@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Data from './mockdata_noir.json'
 import axios from 'axios';
-import Header from '../components/Header';
 import Tabbar from '../components/Tabbar';
 import { Link } from 'react-router-dom';
 
@@ -55,7 +54,6 @@ function App() {
 
   return (
     <div>
-      <Header/>
       <div className="main_container" style={{gap:"20px",display:"flex",flexDirection:"column",justifyContent:"flex-start",alignItems:"center",marginTop:"10px"}}>
         <Tabbar/>
         <div className='image_container' style={{display:'flex', gap:"10px"}}>

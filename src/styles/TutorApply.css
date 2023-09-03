@@ -1,158 +1,167 @@
+@font-face {
+  font-family: 'Dovemayo_gothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* Assign tutor container */
 .assign-tutor-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-  }
-  
-  /* Introduction section */
-  .introduction-section {
-    margin-bottom: 20px;
-  }
-  
-  .introduction-section textarea {
-    width: 100%;
-    height: 200px;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  /* Genre section */
-  .genre-section {
-    margin-bottom: 20px;
-  }
-  
-  .genre-section .genre-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .genre-section .genre-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .genre-section .genre-buttons button {
-    padding: 10px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: white;
-    background-color: #94C0AA;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .genre-section .genre-buttons button.selected {
-    background-color: #6cb48f;
-  }
-  
-  /* Photo section */
-  .photo-section {
-    margin-top: 50px;
-  }
-  
-  .photo-section .photo-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .photo-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .upload-box {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: #eee;
-    cursor: pointer;
-  }
-  
-  .upload-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .upload-box input[type="file"] {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-  
-  }
-  
-  /* Register button */
-  .register-button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .register-button {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-    background-color: #333;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .register-button:hover {
-    background-color: #ffcc00;
-  }
-  
-    .confirmation-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .confirmation-modal-content {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      text-align: center;
-    }
-  
-    .confirmation-modal-content h2 {
-      margin-bottom: 10px;
-    }
-  
-    .confirmation-modal-content .buttons {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-  
-    .confirmation-modal-content .buttons button {
-      margin: 0 10px;
-    }
+  font-family: 'Dovemayo_gothic';
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Introduction section */
+.introduction-section {
+  margin-bottom: 20px;
+}
+
+.introduction-section textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Genre section */
+.genre-section {
+  margin-bottom: 20px;
+}
+
+.genre-section .genre-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.genre-section .genre-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.genre-section .genre-buttons button {
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #94C0AA;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.genre-section .genre-buttons button.selected {
+  background-color: #6cb48f;
+}
+
+/* Photo section */
+.photo-section {
+  margin-top: 50px;
+}
+
+.photo-section .photo-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.photo-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.upload-box {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.upload-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload-box input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+
+}
+
+/* Register button */
+.register-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.register-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.register-button:hover {
+  background-color: #ffcc00;
+}
+
+.confirmation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmation-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.confirmation-modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.confirmation-modal-content .buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.confirmation-modal-content .buttons button {
+  margin: 0 10px;
+}

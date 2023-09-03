@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
 import "../styles/TutorApply.css";
 import { Link } from "react-router-dom";
 
 function TutorApply() {
   const [inputNickname, setInputNickname] = useState(""); // 이름을 입력받는 상태값
-  const [inputEmail, setInputEmail] = useState(""); // 이메일을 입력받는 상태값  
+  const [inputEmail, setInputEmail] = useState(""); // 이메일을 입력받는 상태값
   const [introduction, setIntroduction] = useState("");
   const [genres, setGenres] = useState([]);
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -57,22 +56,30 @@ function TutorApply() {
     }
   };
 
-  
   return (
     <div>
-      <Header />
       <div className="assign-tutor-container">
         <div className="introduction-section">
-            <h2>닉네임</h2>
-            <input type="text" value={inputNickname} onChange={handleInputNicknameChange} placeholder="nickname" />
-            
-            <h2>튜터 이메일</h2>
-            <input type="text" value={inputEmail} onChange={handleInputEmailChange} placeholder="e-mail"/>
+          <h2>닉네임</h2>
+          <input
+            type="text"
+            value={inputNickname}
+            onChange={handleInputNicknameChange}
+            placeholder="nickname"
+          />
+
+          <h2>튜터 이메일</h2>
+          <input
+            type="text"
+            value={inputEmail}
+            onChange={handleInputEmailChange}
+            placeholder="e-mail"
+          />
 
           <h2>자기소개</h2>
           <textarea
             value={introduction}
-            style={{ width: "780px", height: "150px"}}
+            style={{ width: "780px", height: "150px" }}
             onChange={handleIntroductionChange}
             placeholder="자기소개를 입력하세요"
           ></textarea>
@@ -83,19 +90,21 @@ function TutorApply() {
             {genresData.map((genre) => (
               <button
                 key={genre.id}
-                className={genres.some((g) => g.id === genre.id) ? "selected" : ""}
+                className={
+                  genres.some((g) => g.id === genre.id) ? "selected" : ""
+                }
                 onClick={() => handleGenreSelect(genre)}
               >
                 {genre.name}
               </button>
             ))}
-          </div>  
+          </div>
         </div>
 
         <Link to="/tutorportfolio">
-            <button type="submit">다음으로</button>
+          <button type="submit">다음으로</button>
         </Link>
-        </div>
+      </div>
     </div>
   );
 }

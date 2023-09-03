@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Chat.css";
-import Header from "../components/Header";
 import axios from "axios";
 import ChatComponent from "../components/ChatComponent";
 //axios
@@ -101,7 +100,6 @@ function Chat() {
 
   return (
     <div className="main-header">
-      <Header />
       <ChatComponent />
 
       <div className="chat-container">
