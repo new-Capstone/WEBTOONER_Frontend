@@ -1,17 +1,31 @@
 import React, { useState, useEffect, useRef } from "react";
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../styles/Mypage.css'
-import axios from 'axios';
+import Modal from 'react-modal';
+
 
 function User(props) {
-    const [user, setUser] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const ModalStyle = { //modal css
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+    }
+  };
+
+  const [user, setUser] = useState("");
     
-    useEffect(() => {
-        axios({
-            method: 'GET',
-            url:'http://capstone-webtooner.com/user?userId=6'
-        }).then(response => setUser(response.data))
-    },[]);
+  useEffect(() => {
+    axios({
+      method: 'GET',
+      url:'http://capstone-webtooner.com/user?userId=6'
+    }).then(response => setUser(response.data))
+  },[]);
 
     const [profileImage, setProfileImage] = useState("");
     const [username, setUsername] = useState("");
@@ -150,6 +164,14 @@ function User(props) {
     <Link to='/mypage'>
       <button onClick={handleUpdateProfile}>수정</button>
     </Link>
+    <button onClick={()=> setModalIsOpen(true)}>탈퇴</button>
+      <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={ModalStyle}>
+        <br/>회원탈퇴 하시겠습니까?<br/><br/>
+      <Link to="/">
+        <button>네(메인페이지로)</button>
+      </Link>
+        <button onClick={()=> setModalIsOpen(false)}>아니오</button>
+      </Modal>
   </div>
     );
 }

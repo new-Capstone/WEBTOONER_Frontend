@@ -10,7 +10,6 @@ function Header() {
       <Link to="/" className="logo">My Logo</Link>
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to = "/mypage">My Page</Link></li>
           <li><Link to= "/findtutor">Tutor</Link></li>

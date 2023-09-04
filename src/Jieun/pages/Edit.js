@@ -16,17 +16,9 @@ function Edit() {
             url:'http://capstone-webtooner.com/user?userId=6'
         }).then(response => setUser(response.data))
     })
-    
-
-    // const [user, setUser] = useState({
-    //     id:1,
-    //     name: "김지은",
-    //     email: "smkje19999@gamil.com",
-    //     intro: "소개글"
-    // });
 
     const [logs, setLogs] = useState("");
-    const id = 15
+    const id = 10
     const myurl = 'http://capstone-webtooner.com/beforeimage?beforeImageId='+ id
     
     useEffect(()=>{
@@ -64,14 +56,6 @@ function Edit() {
                 <div className="mp-left">
                 <h1>마이페이지</h1>
                     <User user={user} onSubmit={handleSubmit} />
-                        <button onClick={()=> setModalIsOpen(true)}>탈퇴</button>
-                        <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={ModalStyle}>
-      	                    <br/>회원탈퇴 하시겠습니까?<br/><br/>
-                            <Link to="/">
-                                <button>네(메인페이지로)</button>
-                            </Link>
-                            <button onClick={()=> setModalIsOpen(false)}>아니오</button>
-                        </Modal>
                 </div>
 
                 <div className='mp-right'>

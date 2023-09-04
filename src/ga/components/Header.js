@@ -33,7 +33,6 @@ function Header() {
       <Link to="/" className="logo"><p className="logo">WEBTOONER</p></Link>
       <nav>
         <ul>
-          <li><Link to="/"><p>Home</p></Link></li>
           <li><Link to="/about"><p>About</p></Link></li>
           <li><Link to = "/mypage"><p>My Page</p></Link></li>
           <li><Link to = "/findtutor"><p>Tutor</p></Link></li>

@@ -6,20 +6,11 @@ import '../styles/Mypage.css'
 import axios from "axios"
 import { Link } from 'react-router-dom';
 
-//sd 캐릭터 표시 넣기 
-//버튼 클릭 factor 저장하게 
-
 function Use(){
     const [files, setFiles] = useState([]);
     const [faces, setFaces]=useState([]);
     const [genres, setGenres] = useState([]);
 
-    const genresData = [
-        { id: 1, name: "기쁨" },
-        { id: 2, name: "슬픔" },
-        { id: 3, name: "분노" },
-        { id: 4, name: "놀람" },
-      ];
 
       const handleGenreSelect = (selectedGenre) => {
         setGenres((prevGenres) =>
@@ -29,20 +20,12 @@ function Use(){
         );
       };  
 
-    // const [beforeimage, setBeforeImage] = useState("");
-    // useEffect(() => {
-    //     axios({
-    //         method: 'GET',
-    //         url: "http://capstone-webtooner.com/beforeimage?beforeImageId=10"
-    //     }).then(response => setBeforeImage(response.data))
-    // })
-
     const [userId, setUserId] = useState("");
     const [expression, setExpression] = useState("");
     const [model, setModel] = useState("");
     const [gender, setGender] = useState("");
     const [loraName, setLoraName] = useState("");
-    const [afterId, setafterId] = useState("");
+    const [afterImage, setAfterImage] = useState("");
 
     const [selected1, setSelected1] = useState(false)
     const onClickHappy = (event) => {
@@ -52,7 +35,6 @@ function Use(){
         setModel("lora")
         setGender("man")
         setLoraName("치즈인더트랩")
-        setafterId(80)
         console.log(model)
         setSelected1(!selected1)
     }
@@ -65,7 +47,6 @@ function Use(){
         setModel("lora")
         setGender("woman")
         setLoraName("치즈인더트랩")
-        setafterId(46)
         console.log(model)
         setSelected2(!selected2)
     }
@@ -78,7 +59,6 @@ function Use(){
         setModel("lora")
         setGender("woman")
         setLoraName("치즈인더트랩")
-        setafterId(108)
         console.log(model)
         setSelected3(!selected3)
     }
@@ -91,12 +71,28 @@ function Use(){
         setModel("lora")
         setGender("woman")
         setLoraName("치즈인더트랩")
-        setafterId(102)
         console.log(model)
         setSelected4(!selected4)
     }
-    //95
-    //101
+    
+    const [selected6, setSelected6] = useState(false)
+    const onClickGod = (event) => {
+        event.preventDefault();
+        setUserId(1)
+        setLoraName("신의탑")
+        console.log(model)
+        setSelected6(!selected6)
+    }
+
+    const [selected7, setSelected7] = useState(false)
+    const onClickDuna = (event) => {
+        event.preventDefault();
+        setUserId(1)
+        setLoraName("이두나")
+        console.log(model)
+        setSelected7(!selected7)
+    }
+
     const [mid, setMid] = useState("")
     const [selected5, setSelected5] = useState(false)
     const onClicktry = (event) => {
@@ -128,8 +124,6 @@ function Use(){
     console.log(model)
   })
   };
-
-  const [afterImage, setAfterImage] = useState("");
 
   const url2='http://capstone-webtooner.com/afterimage/userId?beforeImageId=' + mid
   useEffect(() => {
@@ -199,8 +193,7 @@ function Use(){
                 <div className="main_container">
                 <div className="main_siderbar">
                     <div className="face">
-                        <h1>faces</h1>
-                        
+                        <h4>표정</h4>
                         <div className="face-buttons">
                         <button style = {{
                             backgroundColor: selected1 ? '#6cb48f' : '#FFFFFF',
@@ -218,24 +211,32 @@ function Use(){
                             backgroundColor: selected4 ? '#6cb48f' : '#FFFFFF',
                             color: selected4 ? '#FFFFFF' : '#6cb48f',}}
                             onClick={onClickAngry}>분노</button>
+                        </div>
+                        <div className="face-buttons">
+                        <br/>
+                        <h4>웹툰</h4>
+                        <button style = {{
+                            backgroundColor: selected6 ? '#6cb48f' : '#FFFFFF',
+                            color: selected6 ? '#FFFFFF' : '#6cb48f',}}
+                        onClick={onClickGod}>신의탑</button>
+                        <button style = {{
+                            backgroundColor: selected7 ? '#6cb48f' : '#FFFFFF',
+                            color: selected7 ? '#FFFFFF' : '#6cb48f',}}
+                        onClick={onClickDuna}>이두나!</button>
+                        </div>
+                    </div>
                         
-                        <br/><br/><br/><br/><br/><br/><br/><br/>
-                        <div className="dt-button">
+                    <div className="dt-button">
                         <button style = {{
                             backgroundColor: selected5 ? '#ffffff' : '#6cb48f',
                             color: selected5 ? '#6cb48f' : '#ffffff',}}
                             onClick={onClicktry}>try</button>
                         <button onClick={onClickshow}>done</button>
-                        </div>
-                        </div>
                     </div>
-                    
                 </div>
+
                 <div className="photoupload">
                 <h1>내 파일 업로드하기</h1>
-                <label className="upload-button" for="input">
-                    Upload
-                </label><br/>
 
                 {/* 드래그 앤 드롭 영역 */}            
                 {showDropBox && (
@@ -244,7 +245,11 @@ function Use(){
                     onDrop={handleDrop}
                     onDragOver={handleDragOver}
                 >
-                    <span>Drop an artwork you want to transform here</span>
+                    <h2>원하는 이미지를 넣고 다양한 변환을 시도해보세요!</h2>
+                    <span>파일을 드래그 하거나 버튼을 클릭하여 업로드하세요</span><br/>
+                    <label className="upload-button" for="input">
+                        이미지 불러오기
+                    </label><br/>
                 </div>
                     )}
 

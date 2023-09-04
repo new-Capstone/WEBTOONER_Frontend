@@ -26,7 +26,7 @@ function Mypage() {
     // })
 
     const [logs, setLogs] = useState("");
-    const id = 15
+    const id = 10
     const myurl = 'http://capstone-webtooner.com/beforeimage?beforeImageId='+ id
     
     useEffect(()=>{
@@ -78,6 +78,7 @@ function Mypage() {
 
             <div className='mp-right'>
                 <h1>이전 결과 둘러보기</h1>
+                최근 4개의 변환 이미지입니다. 클릭하면 변환 후 이미지를 조회할 수 있습니다.<br/><br/>
                 <img src={logs.beforeImageUri} onClick={()=> setModalIsOpen(true)}/>
                     <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={ModalStyle}>
                         <img src="https://capstone-webtooner.s3.ap-northeast-2.amazonaws.com/dedd7440-ce62-42bc-8abb-4f8ab9c32ae2_.png" onClick={()=> setModalIsOpen(false)}/>

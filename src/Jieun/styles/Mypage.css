@@ -110,6 +110,7 @@ button {
   }
   
   .mp-main {
+    margin-left: 17%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -134,9 +135,13 @@ button {
     border-radius: 50%;
   }
 
+  .mp-left ul {
+    margin-top: 10px;
+  }
+
   .mp-left ul li {
     list-style: none;
-    margin-left: -40px;
+    margin-left: -32px;
     font-size: 20px;
   }
 
@@ -165,7 +170,7 @@ button {
     position: relative;
     flex-direction: column;
     padding: 1px;
-    margin-left: 13%;
+    margin-left: 7%;
   }
 
   .mp-right img {

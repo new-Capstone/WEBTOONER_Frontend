@@ -1,133 +1,68 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from '../components/Header'
-import { Link } from 'react-router-dom';
 import '../styles/Mypage.css'
-import Modal from 'react-modal';
 import axios from "axios";
 
 function TutorPortfolio() {
-//
-    const onChangeImg = (e) => {
-        e.preventDefault();
-        
-        if(e.target.files){
-          const uploadFile = e.target.files[0]
-          const formData = new FormData()
-          formData.append('files',uploadFile)
-          console.log(uploadFile)
-         
-          axios({
-            method: 'post',
-            url: "http://capstone-webtooner.com/portfolio",
-            data: formData,
-            headers: {
-              'Content-Type': 'multipart/form-data',
-            },
-          });
+  const fileInputRef = useRef(null);
+  const [previewUrls, setPreviewUrls] = useState([]);
 
-          console.log(uploadFile)
-        }
-      }
+  const handleUpload = (event) => {
+    event.preventDefault();
+    const files = fileInputRef.current.files;
+    const formData = new FormData();
 
-      const [files, setFiles] = useState([]);
-      useEffect(() => {
-        axios({
-            method: 'get',
-            url: "http://capstone-webtooner.com/portfolio"
-        }).then(response => setFiles(response.data))
-      })
-//
-
-
-    const [imageData, setImageData] = useState([]);
-
-    function previewImage(event, index) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          setImageData((prevImageData) => [
-            ...prevImageData.filter((image) => image.id !== index),
-            { id: index, data: reader.result },
-          ]);
-        };
-        reader.readAsDataURL(event.target.files[0]);
-      }
-
-      const [modalIsOpen, setModalIsOpen] = useState(false);
-
-      const ModalStyle = { //modal css
-          content: {
-              top: '50%',
-              left: '50%',
-              right: 'auto',
-              bottom: 'auto',
-              marginRight: '-50%',
-              transform: 'translate(-50%, -50%)',
-          }
-      };
-  
-
-    return (
+    for (const file of files) {
+      formData.append("multipartFileList", file);
+    }
     
-        <div className='mp-container'>
-            <Header />
-            <div className="mp-left">
-                <br/>
-                <h1>포트폴리오 등록</h1>
-            </div>
-            <div className="mp-main">
+    axios ({
+      method: 'POST',
+      url: 'http://capstone-webtooner.com/portfolio?tutorId=1',
+      data: formData,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
+    .then((result) => {
+      console.log('요청성공');
+      console.log(result);
+    })
+    .catch((error) => {
+      console.log('요청실패');
+      console.log(error);
+    });
+  };
 
- {/*  */}
-            {/* <form>
-                    <label htmlFor="profile-upload" />
-                    <input type="file" id="profile-upload" accept="image/*" onChange={onChangeImg}/>
-            </form>
-            {files.map(file => (
-                <li key = {file.portfolioId}>
-                    <div>{file.tutorId}</div>
-                </li>
-            ))} */}
-{/*  */}
+  const handleFileChange = (event) => {
+    const files = event.target.files;
+    const urls = [];
 
-            {[1,2,3,4].map((index) => (
-                <div className="upload-box" key={index}>
-                    <label htmlFor={`file-input-${index}`}>
-                    {imageData.find((image) => image.id === index) ? (
-                        <img
-                        id={`previewImage-${index}`}
-                        src={imageData.find((image) => image.id === index).data}
-                        alt="Upload image"
-                        />
-                    ) : (
-                        <img
-                        id={`previewImage-${index}`}
-                        src="https://via.placeholder.com/150x150"
-                        alt="Upload image"
-                        />
-                    )}
-                    </label>
-                    <input
-                    id={`file-input-${index}`}
-                    type="file"
-                    accept="image/*"
-                    onChange={(event) => previewImage(event, index)}
-                    />
-                </div>
-                ))}
-            </div>
+    for (const file of files) {
+      urls.push(URL.createObjectURL(file));
+    }
+    
+    setPreviewUrls(urls);
+  };
+   
+  return (
+    <div className='mp-container'>
+      <Header />
+      <div className="mp-left">
+        <br/>
+        <h1>포트폴리오 등록</h1>
+      </div>
+      <div className="mp-main">
+        <input type="file" multiple ref={fileInputRef} onChange={handleFileChange} />
+        <div className="preview-container">
+          {previewUrls.map((url, index) => (
+            <img key={index} src={url} alt={`Preview ${index}`} className="preview-image" />
+          ))}
+        </div>
+        <button onClick={handleUpload}>업로드</button>
+      </div>
+    </div>
+  );
+}
 
-            <div className="mp-right">    
-                <button onClick={()=> setModalIsOpen(true)}>등록하기</button>
-                <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={ModalStyle}>
-                <br/>등록하시겠습니까?<br/><br/>
-                <Link to="/tutorpage">    
-                    <button>네</button>
-                </Link>                
-                <button onClick={()=> setModalIsOpen(false)}>아니오</button>
-                </Modal>
-            </ div>
-         </div>
-       
-    );
-  }
-
-  export default TutorPortfolio;
+export default TutorPortfolio;
