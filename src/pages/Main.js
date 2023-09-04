@@ -1,32 +1,57 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Main.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "../styles/Main.css";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Main() {
+const Main = () => {
+  const navigate = useNavigate();
+
+  const line = "WEBTOONER";
+  const [title, setTitle] = useState("");
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const typingInterval = setInterval(() => {
+      setTitle((prev) => {
+        let result = prev ? prev + line[count] : line[0];
+        setCount(count + 1);
+
+        if (count >= line.length) {
+          setCount(0);
+          setTitle("");
+        }
+        return result;
+      });
+    }, 300);
+
+    return () => {
+      clearInterval(typingInterval);
+    };
+  });
+
   return (
     <div>
-      <div className="main-container">
-        <div className="main-left">
-          <div className="main-left-title">Title</div>
-          <div className="main-left-des">
-            본문 설명<br />
-            ...<br />
-            ...<br />
-            ...<br />
-            ...<br />
-            ...<br />
-            <div className="button">
-              <Link to="/use">
-                <button type="button" className="btn btn-outline-success">사용하기</button>
-              </Link>
-            </div>
-          </div>
+      <main id="main">
+        <div className="container">
+          <h4>Welcome</h4>
+          <h2>
+            <span>{title}</span>
+          </h2>
+          <p>
+            웹툰 작가 지망생을 위한 인공지능 모델을 활용한 웹툰 이미지 변환
+            서비스와 튜터 매칭 서비스
+          </p>
+          <button
+            className="use"
+            onClick={() => {
+              navigate("/use");
+            }}
+          >
+            시작하기
+          </button>
         </div>
-        <div className="main-right">사진 들어감</div>
-      </div>
+      </main>
     </div>
   );
-}
+};
 
 export default Main;

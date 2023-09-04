@@ -11,14 +11,6 @@ function Mypage() {
 
   const [user, setUser] = useState("");
 
-  // const [afters, setAfters] = useState("");
-  // useEffect(()=>{
-  //     axios({
-  //         method: 'GET',
-  //         url: "http://capstone-webtooner.com/afterimage?afterImageId=10"
-  //     }).then(response => setLogs(response.data))
-  // })
-
   const [logs, setLogs] = useState("");
 
   var id = userId;
@@ -80,6 +72,10 @@ function Mypage() {
 
         <div className="mp-right">
           <h1>이전 결과 둘러보기</h1>
+          최근 4개의 변환 이미지입니다. 클릭하면 변환 후 이미지를 조회할 수
+          있습니다.
+          <br />
+          <br />
           <img src={logs.beforeImageUri} onClick={() => setModalIsOpen(true)} />
           <Modal
             isOpen={modalIsOpen}

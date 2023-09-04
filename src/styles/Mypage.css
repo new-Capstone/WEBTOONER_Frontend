@@ -1,35 +1,31 @@
-/* .sidebar-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-.sidebar-content{
-    flex-direction: column;
-    margin-left: 100px;
-    margin-top: 40px;
+@font-face {
+  font-family: 'Dovemayo_gothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.sidebar-li {
-    list-style: none;
-    margin-left: -40px;
-    font-size: 20px;
+@font-face {
+  font-family: 'SUITE-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
 }
 
-.image-container {
-    display: flex;
-    flex-direction: column;
-    padding: 40px; 
-    margin-left: 30%;
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-.sidebar-bottom {
-    position: fixed;
-    bottom: 0;
-    margin-left: 60px;
-    margin-bottom: 30px;
+@font-face {
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
-*/
+
 
 
 
@@ -57,9 +53,15 @@ button {
 
   cursor: pointer;
 
+  border-style: solid;
+
+  border-radius: 5px;
+
+
 }
 
 .mp-container {
+  font-family: 'Dovemayo_gothic';
   display: flex;
   flex-direction: column;
 
@@ -78,30 +80,59 @@ button {
 }
 
 .mp-main {
+  margin-left: 17%;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: flex-start;
-  gap: 40px;
+  gap: 0px;
   /* margin: 50px 0; */
   /* border-top: 1px solid #ccc; */
   /* border-bottom: 1px solid #ccc; */
-  padding: 50px 0;
+  padding: 0px;
 }
 
-.use-left {
+.mp-main h1 {
+  color: #6cb48f;
+}
+
+.mp-left {
   margin-left: 40px;
 }
 
 .mp-left img {
   width: 230px;
   height: 230px;
-  border-radius: 20px;
+  border-radius: 50%;
+}
+
+.mp-left ul {
+  margin-top: 10px;
 }
 
 .mp-left ul li {
   list-style: none;
-  margin-left: -40px;
+  margin-left: -32px;
   font-size: 20px;
+}
+
+.mp-left li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.mp-left button {
+  display: block;
+  text-align: center;
+  margin: 5px 0;
+  font-size: 20px;
+  width: 95px;
+  color: #6cb48f;
+  background-color: #ffffff;
+  border: none;
+  border-style: solid;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration-line: none;
 }
 
 .mp-right {
@@ -109,7 +140,7 @@ button {
   position: relative;
   flex-direction: column;
   padding: 1px;
-  margin-left: 15%;
+  margin-left: 7%;
 }
 
 .mp-right img {

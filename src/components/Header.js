@@ -4,7 +4,7 @@ import axios from "axios";
 import { useAuth } from "./AuthContext"; // AuthContext를 불러옵니다.
 import "../styles/Header.css";
 
-function Header() {
+function Header({ isMain }) {
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const [loginEmail, setLoginEmail] = useState(""); // 이메일 상태 관리
   const [loginPassword, setLoginPassword] = useState(""); // 비밀번호 상태 관리
@@ -51,7 +51,6 @@ function Header() {
 
       // 로그인 팝업 닫기
       closeLoginPopup();
-      
     } catch (error) {
       // 로그인 실패 처리
       console.error("로그인 실패:", error);
@@ -68,40 +67,26 @@ function Header() {
   };
 
   return (
-    <div className="header">
+    <div className={["header", isMain ? "main" : null].join(" ")}>
       <Link to="/" className="logo">
-        <p className="logo">WEBTOONER</p>
+        My Logo
       </Link>
       <nav>
         <ul>
           <li>
-            <Link to="/">
-              <p>Home</p>
-            </Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">
-              <p>About</p>
-            </Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/chat">
-              <p>Chat</p>
-            </Link>
+            <Link to="/mypage">My Page</Link>
           </li>
           <li>
-            <Link to="/Tutorapply">
-              <p>Apply</p>
-            </Link>
-          </li>
-          <li>
-            <Link to="/Mypage">
-              <p>MyPage</p>
-            </Link>
+            <Link to="/findtutor">Tutor</Link>
           </li>
         </ul>
       </nav>
-
       {isLoggedIn ? ( // 로그인 상태에 따라 버튼 표시 여부 결정
         <button className="logout-button" onClick={handleLogout}>
           로그아웃
