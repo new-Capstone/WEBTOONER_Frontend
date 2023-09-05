@@ -25,7 +25,7 @@ function Edit() {
   // });
 
   const [logs, setLogs] = useState("");
-  const myurl =
+  var myurl =
     "http://capstone-webtooner.com/beforeimage?beforeImageId=" + userId;
 
   useEffect(() => {

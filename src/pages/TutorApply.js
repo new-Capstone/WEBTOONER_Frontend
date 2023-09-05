@@ -1,21 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../styles/TutorApply.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+
+//http://capstone-webtooner.com/tutorapi
 
 function TutorApply() {
-  const [inputNickname, setInputNickname] = useState(""); // 이름을 입력받는 상태값
-  const [inputEmail, setInputEmail] = useState(""); // 이메일을 입력받는 상태값
-  const [introduction, setIntroduction] = useState("");
-  const [genres, setGenres] = useState([]);
-  const [showConfirmation, setShowConfirmation] = useState(false);
+  //userId 23부터 시작
+  //이것을 localstorage에 저장해서 사용할 것 
+  //localStorage.setItem('nextUserId', [23]);
+  console.log(localStorage.getItem('nextUserId'))
+  const [userId, setUserId] = useState(parseInt(localStorage.getItem('nextUserId')));
+  const [inputNickname, setInputNickname] = useState("");  //tutorName
+  const [inputEmail, setInputEmail] = useState(""); //email 
+  const [introduction, setIntroduction] = useState(""); //description_introduction
+  const [genres, setGenres] = useState([]);  //categoryName-genre
 
-  const genresData = [
-    { id: 1, name: "호러" },
-    { id: 2, name: "로맨스" },
-    { id: 3, name: "액션" },
-    { id: 4, name: "기타" },
-  ];
+  const navigate = useNavigate();
 
+  //사용자로부터 기본사항 입력받는 부분
   const handleInputNicknameChange = (e) => {
     const { value } = e.target;
     setInputNickname(value);
@@ -39,42 +42,43 @@ function TutorApply() {
     );
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: 회원 등록 처리
-    setShowConfirmation(true);
-    {
-      showConfirmation && (
-        <div className="confirmation-modal">
-          <h2>등록하시겠습니까?</h2>
-          <div className="buttons">
-            <button onClick={() => setShowConfirmation(false)}>아니오</button>
-            <button>예</button>
-          </div>
-        </div>
-      );
+  const handleCreateTutor = async () => {
+    try {
+      const response = await axios.post("https://capstone-webtooner.com/tutorapi", {
+        "userId": userId,
+        "description": introduction,
+        "categoryNames": genres,
+        "tutorName": inputNickname,
+        "tutorEmail": inputEmail
+      });
+      console.log(response);
+      //이 부분을 localStorage 추가하는 것으로 바꿀 것 
+      //setUserId((prevUserId) => prevUserId + 1);
+      localStorage.setItem('nextUserId', userId + 1);
+
+    } catch (error) {
+      console.log(error);
     }
-  };
+
+    setTimeout(() => {
+      navigate(`/tutorportfolio/${genres[0]}/${userId}`);
+    }, 100)
+
+  }
+
+  useEffect(() => {
+    console.log(userId)
+  }, [userId])
 
   return (
     <div>
       <div className="assign-tutor-container">
         <div className="introduction-section">
           <h2>닉네임</h2>
-          <input
-            type="text"
-            value={inputNickname}
-            onChange={handleInputNicknameChange}
-            placeholder="nickname"
-          />
+          <input type="text" value={inputNickname} onChange={handleInputNicknameChange} placeholder="nickname" />
 
           <h2>튜터 이메일</h2>
-          <input
-            type="text"
-            value={inputEmail}
-            onChange={handleInputEmailChange}
-            placeholder="e-mail"
-          />
+          <input type="text" value={inputEmail} onChange={handleInputEmailChange} placeholder="e-mail" />
 
           <h2>자기소개</h2>
           <textarea
@@ -84,27 +88,40 @@ function TutorApply() {
             placeholder="자기소개를 입력하세요"
           ></textarea>
         </div>
+
         <div className="genre-section">
           <h2>장르 선택</h2>
           <div className="genre-buttons">
-            {genresData.map((genre) => (
-              <button
-                key={genre.id}
-                className={
-                  genres.some((g) => g.id === genre.id) ? "selected" : ""
-                }
-                onClick={() => handleGenreSelect(genre)}
-              >
-                {genre.name}
-              </button>
-            ))}
+            <button
+              className={genres.includes("noir") ? "selected" : ""}
+              onClick={() => handleGenreSelect("noir")}
+            >
+              장르1
+            </button>
+            <button
+              className={genres.includes("romance") ? "selected" : ""}
+              onClick={() => handleGenreSelect("romance")}
+            >
+              장르2
+            </button>
+            <button
+              className={genres.includes("action") ? "selected" : ""}
+              onClick={() => handleGenreSelect("action")}
+            >
+              장르3
+            </button>
+            <button
+              className={genres.includes("horror") ? "selected" : ""}
+              onClick={() => handleGenreSelect("horror")}
+            >
+              장르4
+            </button>
           </div>
         </div>
 
-        <Link to="/tutorportfolio">
-          <button type="submit">다음으로</button>
-        </Link>
+        <button type="submit" onClick={handleCreateTutor}>다음으로</button>
       </div>
+
     </div>
   );
 }

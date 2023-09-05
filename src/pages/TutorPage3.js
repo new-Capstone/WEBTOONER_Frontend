@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/Header";
 import { Link, useParams } from "react-router-dom";
 import "../styles/Mypage.css";
 import axios from "axios";
@@ -53,7 +52,6 @@ const Tutorpage3 = () => {
 
   return (
     <div>
-      <Header />
       <div
         className="mp-main"
         style={{
