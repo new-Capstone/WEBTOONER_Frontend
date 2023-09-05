@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../styles/Mypage.css";
 import axios from "axios";
+import { useAuth } from "../components/AuthContext"; // AuthContext를 불러옴
 
 //id=>카테고리 이름
 // 튜터 정보
@@ -16,7 +17,7 @@ const Tutorpage3 = () => {
   const { tutorId } = useParams();
 
   const [TutorData, setData] = useState({
-    tutorId: 0,
+    tutorId:0,
     nickname: "",
     email: "",
     intro: "",

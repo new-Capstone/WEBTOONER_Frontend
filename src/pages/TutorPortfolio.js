@@ -3,22 +3,14 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './../styles/TutorPortfolio.css';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { useAuth } from "../components/AuthContext"; // AuthContext를 불러옴
+
 
 function TutorPortfolio() {
     const { genre, id } = useParams();
     const navigate = useNavigate();
-    const [tutorId, setTutorId] = useState();
+    const { tutorId, userId } = useAuth(); // 로그인 여부와 유저 ID 가져오기
 
-    useEffect(() => {
-        axios
-            .get(`http://capstone-webtooner.com/user?userId=${id}`)
-            .then((response) => {
-                console.log(response);
-                console.log(response.data.teachingInformationDto.tutorId);
-                setTutorId(response.data.teachingInformationDto.tutorId);
-            })
-            .catch((error) => console.log(error));
-    }, [id]);
 
     useEffect(() => {
         console.log(tutorId);

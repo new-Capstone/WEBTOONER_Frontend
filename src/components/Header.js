@@ -1,3 +1,5 @@
+// Header.js
+
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -10,7 +12,8 @@ function Header({ isMain }) {
   const [loginPassword, setLoginPassword] = useState("");
   const [loginError, setLoginError] = useState("");
 
-  const { isLoggedIn, login, logout, setAuthUserId } = useAuth();
+  const { isLoggedIn, login, logout, setAuthUserId, isTutor } = useAuth(); // isTutor를 추가
+
   const navigate = useNavigate();
 
   const openLoginPopup = () => {
@@ -70,14 +73,21 @@ function Header({ isMain }) {
           <li>
             <Link to="/about">About</Link>
           </li>
-          {isLoggedIn && ( // 로그인 상태에서만 렌더링
+          {isLoggedIn && (
             <>
               <li>
                 <Link to="/mypage">My Page</Link>
               </li>
+              {isTutor ? ( // isTutor 상태를 확인하여 표시할 내용 변경
+                <li>
+                  <Link to="/findtutor/:genre/:tutorId">Tutor MyPage</Link>
+                </li>
+              ) : (
+                <li>
+                  <Link to="/findtutor">Tutor</Link>
+                </li>
+              )}
               <li>
-                <Link to="/findtutor">Tutor</Link>
-              </li>              <li>
                 <Link to="/tutorapply">Apply Tutor</Link>
               </li>
             </>

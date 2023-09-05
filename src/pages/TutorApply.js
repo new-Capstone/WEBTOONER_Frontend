@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "../styles/TutorApply.css";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { useAuth } from "../components/AuthContext"; // AuthContext를 불러옴
 
 //http://capstone-webtooner.com/tutorapi
 
@@ -9,8 +10,8 @@ function TutorApply() {
   //userId 23부터 시작
   //이것을 localstorage에 저장해서 사용할 것 
   //localStorage.setItem('nextUserId', [23]);
-  console.log(localStorage.getItem('nextUserId'))
-  const [userId, setUserId] = useState(parseInt(localStorage.getItem('nextUserId')));
+  //console.log(localStorage.getItem('nextUserId'))
+  const { isLoggedIn, userId } = useAuth(); // 로그인 여부와 유저 ID 가져오기
   const [inputNickname, setInputNickname] = useState("");  //tutorName
   const [inputEmail, setInputEmail] = useState(""); //email 
   const [introduction, setIntroduction] = useState(""); //description_introduction
@@ -54,7 +55,7 @@ function TutorApply() {
       console.log(response);
       //이 부분을 localStorage 추가하는 것으로 바꿀 것 
       //setUserId((prevUserId) => prevUserId + 1);
-      localStorage.setItem('nextUserId', userId + 1);
+      //localStorage.setItem('nextUserId', userId + 1);
 
     } catch (error) {
       console.log(error);
