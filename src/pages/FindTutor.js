@@ -33,7 +33,7 @@ const Findtutor = () => {
   const [actionPortfolioList, setActionPortfolioList] = useState([]);
   const [horrorPortfolioList, setHorrorPortfolioList] = useState([]);
 
-  //장르별 튜터 정보 불러오기
+  // 장르별 튜터 정보 불러오기
   useEffect(() => {
     axios
       .all([
@@ -63,12 +63,12 @@ const Findtutor = () => {
 
   const settings = {
     dots: false,
-    arrow: true,
+    arrows: true, // 올바른 속성명은 'arrows'입니다.
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: <PrevArrow />,
-    prevArrow: <NextArrow />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (
@@ -80,16 +80,16 @@ const Findtutor = () => {
         <h1>Noir</h1>
         <Slider {...settings}>
           {noirPortfolioList.map((record) => (
-            <section key={record.tutorId}>
-              <Link to={`/findtutor/noir/${record.tutorId}`}>
+            <section key={record?.tutorId}>
+              <Link to={`/findtutor/noir/${record?.tutorId}`}>
                 <img
-                  key={noirPortfolioList.tutorId}
-                  src={record.url}
+                  src={record?.url}
                   style={{
                     width: "200px",
                     height: "300px",
                     borderRadius: "10px",
                   }}
+                  alt={`Noir Tutor - ${record?.username}`}
                 />
               </Link>
             </section>
@@ -104,16 +104,16 @@ const Findtutor = () => {
         <h1>Romance</h1>
         <Slider {...settings}>
           {romancePortfolioList.map((record) => (
-            <section key={record.tutorId}>
-              <Link to={`/findtutor/romance/${record.tutorId}`}>
+            <section key={record?.tutorId}>
+              <Link to={`/findtutor/romance/${record?.tutorId}`}>
                 <img
-                  key={romancePortfolioList.tutorId}
-                  src={record.url}
+                  src={record?.url}
                   style={{
                     width: "200px",
                     height: "300px",
                     borderRadius: "10px",
                   }}
+                  alt={`Romance Tutor - ${record?.username}`}
                 />
               </Link>
             </section>
@@ -128,16 +128,16 @@ const Findtutor = () => {
         <h1>Action</h1>
         <Slider {...settings}>
           {actionPortfolioList.map((record) => (
-            <section key={record.tutorId}>
-              <Link to={`/findtutor/action/${record.tutorId}`}>
+            <section key={record?.tutorId}>
+              <Link to={`/findtutor/action/${record?.tutorId}`}>
                 <img
-                  key={actionPortfolioList.tutorId}
-                  src={record.url}
+                  src={record?.url}
                   style={{
                     width: "200px",
                     height: "300px",
                     borderRadius: "10px",
                   }}
+                  alt={`Action Tutor - ${record?.username}`}
                 />
               </Link>
             </section>
@@ -152,16 +152,16 @@ const Findtutor = () => {
         <h1>Horror</h1>
         <Slider {...settings}>
           {horrorPortfolioList.map((record) => (
-            <section key={record.tutorId}>
-              <Link to={`/findtutor/horror/${record.tutorId}`}>
+            <section key={record?.tutorId}>
+              <Link to={`/findtutor/horror/${record?.tutorId}`}>
                 <img
-                  key={horrorPortfolioList.tutorId}
-                  src={record.url}
+                  src={record?.url}
                   style={{
                     width: "200px",
                     height: "300px",
                     borderRadius: "10px",
                   }}
+                  alt={`Horror Tutor - ${record?.username}`}
                 />
               </Link>
             </section>

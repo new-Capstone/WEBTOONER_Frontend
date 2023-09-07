@@ -12,7 +12,7 @@ function Header({ isMain }) {
   const [loginPassword, setLoginPassword] = useState("");
   const [loginError, setLoginError] = useState("");
 
-  const { isLoggedIn, login, logout, setAuthUserId, isTutor } = useAuth(); // isTutor를 추가
+  const { isLoggedIn, login, logout, setAuthUserId, isTutor, setTutorUserId, userId, setTutorStatus } = useAuth(); // isTutor를 추가
 
   const navigate = useNavigate();
 
@@ -35,20 +35,28 @@ function Header({ isMain }) {
     };
 
     try {
-      const response = await axios.post(
+      const response1 = await axios.post(
         "https://capstone-webtooner.com/login",
         loginData
       );
 
-      console.log("로그인 성공:", response.data);
+      console.log("로그인 성공:", response1.data);
 
-      setAuthUserId(response.data.userId);
+      setAuthUserId(response1.data.userId);
+
+      setTutorUserId(response1.data.teachingInformationDto.tutorId);
+      console.log("tutorrrr:", response1.data.teachingInformationDto.tutorId);
+      
+      if(response1.data.teachingInformationDto.tutorId >= 0)
+        setTutorStatus(true);
+      
       login();
 
       closeLoginPopup();
+      
+
 
       navigate("/");
-
     } catch (error) {
       console.error("로그인 실패:", error);
 
@@ -63,33 +71,51 @@ function Header({ isMain }) {
   return (
     <div className={["header", isMain ? "main" : null].join(" ")}>
       <Link to="/" className="logo">
-        My Logo
+        <p className="logo">WEBTOONER</p>
       </Link>
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+          <Link to="/">
+          <p>Home</p>
+          </Link>
+
           </li>
           <li>
-            <Link to="/about">About</Link>
+          <Link to="/about">
+          <p>About</p>
+          </Link>
+
           </li>
           {isLoggedIn && (
             <>
               <li>
-                <Link to="/mypage">My Page</Link>
+              <Link to="/findtutor">
+              <p>Tutor</p>
+              </Link>
+
+              </li>
+              <li>
+              <Link to="/mypage">
+              <p>My Page</p>
+              </Link>
+
               </li>
               {isTutor ? ( // isTutor 상태를 확인하여 표시할 내용 변경
                 <li>
-                  <Link to="/findtutor/:genre/:tutorId">Tutor MyPage</Link>
+                  <Link to="/findtutor/:genre/:tutorId">
+                  <p>Tutor MyPage</p>
+                  </Link>
+
                 </li>
               ) : (
                 <li>
-                  <Link to="/findtutor">Tutor</Link>
+                  <Link to="/tutorapply">
+                  <p>Apply Tutor</p>  
+                  </Link>
+
                 </li>
               )}
-              <li>
-                <Link to="/tutorapply">Apply Tutor</Link>
-              </li>
             </>
           )}
         </ul>

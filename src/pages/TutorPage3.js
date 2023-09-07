@@ -14,10 +14,10 @@ import { useAuth } from "../components/AuthContext"; // AuthContext를 불러옴
 //튜터 상세 페이지
 const Tutorpage3 = () => {
   //주소창을 받을 tutorId는 tutorId
-  const { tutorId } = useParams();
+  const { tutorId } = useAuth();
 
   const [TutorData, setData] = useState({
-    tutorId:0,
+    tutorId: 0,
     nickname: "",
     email: "",
     intro: "",
@@ -28,9 +28,9 @@ const Tutorpage3 = () => {
   useEffect(() => {
     axios
       .all([
-        axios.get(`http://capstone-webtooner.com/tutorapi?tutorId=${tutorId}`),
+        axios.get(`http://capstone-webtooner.com/tutorapi?tutorId=`+tutorId),
         axios.get(
-          `http://capstone-webtooner.com/portfolio/tutorId?tutorId=${tutorId}`
+          `http://capstone-webtooner.com/portfolio/tutorId?tutorId=`+tutorId
         ),
       ])
       .then(
