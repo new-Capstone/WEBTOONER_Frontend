@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "../styles/Mypage.css";
 import axios from "axios";
 import { useAuth } from "../components/AuthContext"; // AuthContext를 불러옴
+import '../styles/TutorPage3.css';
 
 //id=>카테고리 이름
 // 튜터 정보
@@ -14,7 +15,8 @@ import { useAuth } from "../components/AuthContext"; // AuthContext를 불러옴
 //튜터 상세 페이지
 const Tutorpage3 = () => {
   //주소창을 받을 tutorId는 tutorId
-  const { tutorId } = useAuth();
+  const { genre, tutorId } = useParams()
+  console.log(tutorId);
 
   const [TutorData, setData] = useState({
     tutorId: 0,
@@ -28,10 +30,10 @@ const Tutorpage3 = () => {
   useEffect(() => {
     axios
       .all([
-        axios.get(`http://capstone-webtooner.com/tutorapi?tutorId=`+tutorId),
+        axios.get(`http://capstone-webtooner.com/tutorapi?tutorId=${tutorId}`),
         axios.get(
-          `http://capstone-webtooner.com/portfolio/tutorId?tutorId=`+tutorId
-        ),
+          `http://capstone-webtooner.com/portfolio/tutorId?tutorId=${tutorId}`
+        )
       ])
       .then(
         axios.spread((res1, res2) => {
@@ -69,6 +71,7 @@ const Tutorpage3 = () => {
             justifyContent: "center",
           }}
         >
+          <h1>튜터 상세페이지</h1>
           <img src="https://via.placeholder.com/231x231" alt="side-image" />
           <div
             className="introduce"
@@ -90,6 +93,7 @@ const Tutorpage3 = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            marginTop: "10px"
           }}
         >
           {TutorData.portfolio_img.map((imageUrl, index) => (
@@ -101,7 +105,7 @@ const Tutorpage3 = () => {
                 width: "600px",
                 height: "300px",
                 marginBottom: "20px",
-                borderRadius: "5px",
+                borderRadius: "20px",
                 border: "1px solid #ececec",
               }}
             />
