@@ -1,0 +1,52 @@
+[
+    {
+        "tutorId": 12,
+        "nickname": "user1_romance",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "romance",
+        "portfolio_img": [
+            "https://cdn.pixabay.com/photo/2023/08/10/15/20/romance-8181914_640.jpg"
+        ]
+    },
+    {
+        "tutorId": 13,
+        "nickname": "user2_romance",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "romance",
+        "portfolio_img": [
+            "https://cdn.pixabay.com/photo/2022/12/18/13/48/skater-7663466_640.png"
+        ]
+    },
+    {
+        "tutorId": 14,
+        "nickname": "user3_romance",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "romance",
+        "portfolio_img": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyFs9LE9sUT1_TvqqmndYXSm8xan6ZVv0PeQ&usqp=CAU"
+        ]
+    },
+    {
+        "tutorId": 15,
+        "nickname": "user4_romance",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "romance",
+        "portfolio_img": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ0138-UE1j64Hn6hgD4KhxgybAq-D4PBEgQ&usqp=CAU"
+        ]
+    },
+    {
+        "tutorId": 16,
+        "nickname": "user5_romance",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "romance",
+        "portfolio_img": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_Zs5sNLEWPA-10ovbzcUgNvwDvHXx3ytyA&usqp=CAU"
+        ]
+    }
+]

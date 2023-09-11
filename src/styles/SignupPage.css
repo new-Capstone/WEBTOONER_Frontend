@@ -1,0 +1,169 @@
+/* Assign tutor container */
+.assign-tutor-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Input fields */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Textarea field */
+.textarea-field {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Upload box */
+.upload-box {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.upload-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-box input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Register button */
+.register-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.register-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.register-button:hover {
+    background-color: #ffcc00;
+}
+
+/* Error message */
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Confirmation modal */
+.confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.confirmation-modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.confirmation-modal-content .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.confirmation-modal-content .buttons button {
+    margin: 0 10px;
+}
+
+.login-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 80%; /* 팝업 컨텐츠 최대 너비 조절 */
+}
+
+.login-popup-content h2 {
+  margin-bottom: 10px;
+}
+
+.login-popup-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-popup-content input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.login-popup-content button {
+  padding: 5px 10px;
+  font-size: 14px; /* 버튼 텍스트 크기 조절 */
+  border-radius: 3px; /* 버튼 테두리 둥글기 조절 */
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.login-popup-content button:hover {
+  background-color: #ffcc00;
+}

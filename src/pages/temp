@@ -1,0 +1,124 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import SockJS from "sockjs-client";
+import { Stomp } from "@stomp/stompjs";
+
+function Users() {
+  const [users, setUsers] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const connectWebSocket = async () => {
+      let reconnect = 0;
+      let sock;
+      let ws;
+
+      const handleWebSocketMessage = (message) => {
+        const recv = JSON.parse(message.body);
+        // do something with the received message
+      };
+
+      const handleWebSocketError = () => {
+        if (reconnect <= 5) {
+          setTimeout(() => {
+            console.log("connection reconnect");
+            connectWebSocket();
+          }, 10 * 1000);
+        }
+      };
+
+      try {
+        sock = new SockJS("https://capstone-webtooner.com/ws-stomp");
+        ws = Stomp.over(sock);
+        ws.connect({}, (frame) => {
+          ws.subscribe(`/sub/chat/room/1`, handleWebSocketMessage); // Modify the room ID as needed
+          ws.send(
+            "/pub/chat/message",
+            {},
+            JSON.stringify({ content:"String", writer:"String", roomEntityId:1, chatUserEntityId:1 }) // Modify the room ID and sender as needed
+          );
+        }, handleWebSocketError);
+
+
+      try {
+        
+        const client = useRef<CompatClient>();
+
+        const connectHaner = () => {
+          clicent.current = Stomp.over(() => {
+            const sock = new SockJS("http://capstone-webtooner.com/ws-stomp")
+            return sock;
+          });
+          client.current.connect(
+            {
+              // 여기에서 유효성 검증을 위해 header를 넣어줄 수 있음.
+              // ex) 
+              Authorization: token
+            },
+            () => {
+              // callback 함수 설정, 대부분 여기에 sub 함수 씀
+              client.current.subscribe(
+                 `/백엔드와 협의한 api주소/{구독하고 싶은 방의 id}`,
+                (message) => {
+                  setMessage(JSON.parse(message.body));
+                },
+                {
+                  // 여기에도 유효성 검증을 위한 header 넣어 줄 수 있음
+                }
+              );
+            }
+          );
+        }
+
+      } catch (e) {
+        setError(e);
+      }
+
+      return () => {
+        // Cleanup WebSocket connection
+        if (ws) {
+          ws.disconnect();
+        }
+        if (sock) {
+          sock.close();
+        }
+      };
+    };
+
+    const fetchUsers = async () => {
+      try {
+        setError(null);
+        setUsers(null);
+        setLoading(true);
+
+        // const response = await axios.get("http://capstone-webtooner.com/ws-stomp");
+        // console.log(response.data);
+
+        // const response2 = await axios.get("http://capstone-webtooner.com/ws-stomp/chat/room/1");
+        // console.log(response2.data);
+
+        setLoading(false);
+      } catch (e) {
+        setError(e);
+        setLoading(false);
+      }
+    };
+
+    fetchUsers();
+    connectWebSocket();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error occurred: {error.message}</div>;
+  if (!users) return <div>No users found.</div>;
+  return (
+    <ul>
+      {/* {users.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))} */}
+    </ul>
+  );
+}
+
+export default Users;

@@ -1,0 +1,37 @@
+[
+    {
+        "tutorId": 1,
+        "nickname": "user1_action",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "action",
+        "portfolio_img": [
+            "https://cdn.pixabay.com/photo/2023/08/07/17/30/actions-8175547_640.png",
+            "https://cdn.pixabay.com/photo/2023/08/07/17/47/actions-8175599_640.png",
+            "https://cdn.pixabay.com/photo/2023/08/07/17/49/actions-8175611_640.png"
+        ]
+    },
+    {
+        "tutorId": 2,
+        "nickname": "user2_action",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "action",
+        "portfolio_img": [
+            "https://cdn.pixabay.com/photo/2023/08/07/20/04/ai-generated-8175896_640.jpg",
+            "https://cdn.pixabay.com/photo/2023/08/10/12/36/science-fiction-8181592_640.jpg"
+        ]
+    },
+    {
+        "tutorId": 3,
+        "nickname": "user3_action",
+        "email": "smkje19999@gmail.com",
+        "intro": "튜터 소개글 입니다.",
+        "category": "action",
+        "portfolio_img": [
+            "https://cdn.pixabay.com/photo/2023/08/03/22/56/hero-8168109_640.png",
+            "https://cdn.pixabay.com/photo/2023/08/03/22/58/hero-8168115_640.png",
+            "https://cdn.pixabay.com/photo/2023/08/03/22/58/hero-8168114_640.png"
+        ]
+    }
+]
