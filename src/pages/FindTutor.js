@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import '../styles/Findtutor.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,24 +9,21 @@ import { IoIosArrowBack } from "react-icons/io";
 
 
 
-function PrevArrow(props) {
-  const { className, style, onClick } = props;
+const PrevArrow = ({ onClick }) => { // props로 onClick을 전달해줘야 한다.
   return (
-    <div className={className} style={{ ...style, background: "black" }} onClick={onClick}>
-    </div>
+    <button onClick={onClick} style={{ outlineColor: "#6cb48f", color: "#6cb48f", backgroundColor: "#ffffff", fontSize: "20px" }}>
+      {"<"}
+    </button>
   );
-}
+};
 
-function NextArrow(props) {
-  const { className, style, onClick } = props;
+const NextArrow = ({ onClick }) => { // props로 onClick을 전달해줘야 한다.
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "black" }}
-      onClick={onClick}
-    ></div>
+    <button onClick={onClick} style={{ outlineColor: "#6cb48f", color: "#6cb48f", backgroundColor: "#ffffff", fontSize: "20px", padding: "none" }}>
+      {">"}
+    </button>
   );
-}
+};
 
 const Findtutor = () => {
   const [noirPortfolioList, setNoirPortfolioList] = useState([]);
@@ -72,7 +70,7 @@ const Findtutor = () => {
   };
 
   return (
-    <div>
+    <div className="findTutor_container">
       <div
         className="noir_imageContainer"
         style={{ width: "75%", margin: "0 auto" }}
@@ -85,7 +83,7 @@ const Findtutor = () => {
                 <img
                   src={record?.url}
                   style={{
-                    width: "230px",
+                    width: "200px",
                     height: "300px",
                     borderRadius: "10px",
                   }}
