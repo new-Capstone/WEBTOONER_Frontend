@@ -4,15 +4,15 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { IoIosArrowBack } from "react-icons/io";
+
+
 
 function PrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "black" }}
-      onClick={onClick}
-    ></div>
+    <div className={className} style={{ ...style, background: "black" }} onClick={onClick}>
+    </div>
   );
 }
 
@@ -63,10 +63,10 @@ const Findtutor = () => {
 
   const settings = {
     dots: false,
-    arrows: true, // 올바른 속성명은 'arrows'입니다.
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
+    arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
@@ -80,19 +80,19 @@ const Findtutor = () => {
         <h1>Noir</h1>
         <Slider {...settings}>
           {noirPortfolioList.map((record) => (
-            <section key={record?.tutorId}>
+            <div key={record?.tutorId}>
               <Link to={`/findtutor/noir/${record?.tutorId}`}>
                 <img
                   src={record?.url}
                   style={{
-                    width: "200px",
+                    width: "230px",
                     height: "300px",
                     borderRadius: "10px",
                   }}
                   alt={`Noir Tutor - ${record?.username}`}
                 />
               </Link>
-            </section>
+            </div>
           ))}
         </Slider>
       </div>
@@ -104,7 +104,7 @@ const Findtutor = () => {
         <h1>Romance</h1>
         <Slider {...settings}>
           {romancePortfolioList.map((record) => (
-            <section key={record?.tutorId}>
+            <div key={record?.tutorId}>
               <Link to={`/findtutor/romance/${record?.tutorId}`}>
                 <img
                   src={record?.url}
@@ -116,7 +116,7 @@ const Findtutor = () => {
                   alt={`Romance Tutor - ${record?.username}`}
                 />
               </Link>
-            </section>
+            </div>
           ))}
         </Slider>
       </div>
@@ -128,7 +128,7 @@ const Findtutor = () => {
         <h1>Action</h1>
         <Slider {...settings}>
           {actionPortfolioList.map((record) => (
-            <section key={record?.tutorId}>
+            <div key={record?.tutorId}>
               <Link to={`/findtutor/action/${record?.tutorId}`}>
                 <img
                   src={record?.url}
@@ -140,7 +140,7 @@ const Findtutor = () => {
                   alt={`Action Tutor - ${record?.username}`}
                 />
               </Link>
-            </section>
+            </div>
           ))}
         </Slider>
       </div>
@@ -152,7 +152,7 @@ const Findtutor = () => {
         <h1>Horror</h1>
         <Slider {...settings}>
           {horrorPortfolioList.map((record) => (
-            <section key={record?.tutorId}>
+            <div key={record?.tutorId}>
               <Link to={`/findtutor/horror/${record?.tutorId}`}>
                 <img
                   src={record?.url}
@@ -164,7 +164,7 @@ const Findtutor = () => {
                   alt={`Horror Tutor - ${record?.username}`}
                 />
               </Link>
-            </section>
+            </div>
           ))}
         </Slider>
       </div>

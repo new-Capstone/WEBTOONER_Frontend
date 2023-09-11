@@ -1,0 +1,49 @@
+.mp-main {
+    font-family: 'Dovemayo_gothic';
+}
+
+button {
+
+    border: none;
+
+    color: #6cb48f;
+
+    background-color: #ffffff;
+
+    outline-color: #6cb48f;
+
+    padding: 10px 25px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    font-size: 20px;
+
+    margin: 4px 2px;
+
+    cursor: pointer;
+
+    border-style: solid;
+
+    border-radius: 5px;
+
+
+}
+
+.mp-right button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    width: 95px;
+    color: #6cb48f;
+    background-color: #ffffff;
+    border: none;
+    border-style: solid;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration-line: none;
+}

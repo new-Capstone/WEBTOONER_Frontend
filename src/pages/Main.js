@@ -31,8 +31,8 @@ const Main = () => {
   return (
     <div>
       <main id="main">
-        <div className="container">
-          <h4>Welcome</h4>
+        <div className="container" style={{ display: "flex", justifyContent: "center", alignContent: "center" }}>
+          <h4 style={{ marginTop: "100px" }}>Welcome</h4>
           <h2>
             <span>{title}</span>
           </h2>
