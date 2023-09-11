@@ -1,0 +1,26 @@
+.findTutor_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.noir_imageContainer h1 {
+    font-family: 'Dovemayo_gothic';
+    color: #6cb48f;
+}
+
+.romance_imageContainer h1 {
+    font-family: 'Dovemayo_gothic';
+    color: #6cb48f;
+}
+
+.action_imageContainer h1 {
+    font-family: 'Dovemayo_gothic';
+    color: #6cb48f;
+}
+
+.horror_imageContainer h1 {
+    font-family: 'Dovemayo_gothic';
+    color: #6cb48f;
+}
