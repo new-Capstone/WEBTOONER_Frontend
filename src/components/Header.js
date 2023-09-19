@@ -46,14 +46,14 @@ function Header({ isMain }) {
 
       setTutorUserId(response1.data.teachingInformationDto.tutorId);
       console.log("tutorrrr:", response1.data.teachingInformationDto.tutorId);
-      
-      if(response1.data.teachingInformationDto.tutorId >= 0)
+
+      if (response1.data.teachingInformationDto.tutorId >= 0)
         setTutorStatus(true);
-      
+
       login();
 
       closeLoginPopup();
-      
+
 
 
       navigate("/");
@@ -76,42 +76,35 @@ function Header({ isMain }) {
       <nav>
         <ul>
           <li>
-          <Link to="/">
-          <p>Home</p>
-          </Link>
+            <Link to="/">
+              <p>Home</p>
+            </Link>
 
           </li>
           <li>
-          <Link to="/about">
-          <p>About</p>
-          </Link>
+            <Link to="/about">
+              <p>About</p>
+            </Link>
 
           </li>
           {isLoggedIn && (
             <>
               <li>
-              <Link to="/findtutor">
-              <p>Tutor</p>
-              </Link>
+                <Link to="/findtutor">
+                  <p>Tutor</p>
+                </Link>
 
               </li>
               <li>
-              <Link to="/mypage">
-              <p>My Page</p>
-              </Link>
+                <Link to="/mypage">
+                  <p>My Page</p>
+                </Link>
 
               </li>
-              {isTutor ? ( // isTutor 상태를 확인하여 표시할 내용 변경
-                <li>
-                  <Link to="/findtutor/:genre/:tutorId">
-                  <p>Tutor MyPage</p>
-                  </Link>
-
-                </li>
-              ) : (
+              {isLoggedIn && ( // isTutor 상태를 확인하여 표시할 내용 변경
                 <li>
                   <Link to="/tutorapply">
-                  <p>Apply Tutor</p>  
+                    <p>Tutor Apply</p>
                   </Link>
 
                 </li>

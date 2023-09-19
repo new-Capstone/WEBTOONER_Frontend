@@ -1,13 +1,14 @@
-.findTutor_container {
+.imageContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 .noir_imageContainer h1 {
     font-family: 'Dovemayo_gothic';
     color: #6cb48f;
+    text-align: center;
 }
 
 .romance_imageContainer h1 {
